@@ -1,31 +1,58 @@
-import Head from 'next/head'
-import Image from 'next/image'
+/* eslint-disable @next/next/no-img-element */
+import { useRef } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const detailRef = useRef();
+
+  const scrollToDetailDiv = () => {
+    detailRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
+  }
+
   return (
     <div className={styles.undangan}>
-      <div className={`${styles.container} ${styles.greeting}`}>
-        <h3>we are getting married</h3>
-        <p>Yuda</p>
-        <p>&</p>
-        <p>Ayu</p>
-        <p>Kepada Yth.</p>
-        <p>Ersapta Aristo & Pasangan</p>
-        <p>di tempat</p>
-        <div className={`${styles.mainbutton}`}>
-          BUKA UNDANGAN
-        </div>
+      <div className={`${styles.bottomnav}`}>
+
       </div>
-      <div className={`${styles.container} ${styles.detail}`}>
-        <Image alt='img' layout='fill' src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/image%201.jpg' />
-        <p>Yuda & Ayu</p>
-        <p>22 November 2022</p>
-        <p>{`"Dan di atas semuanya itu:`}</p>
-        <p>{`Kenakanlah kasih sebagai pengikat"`}</p>
-        <p>{`Yang mempersatukan dan `}</p>
-        <p>{`Yang mempersatukan dan menyempurnakan."`}</p>
-        <p>Kolose 3:14</p>
+      <div className={`${styles.container} ${styles.greeting}`}>
+        <div className={`${styles.hiasan}`}></div>
+        <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, height: 'calc(100vh - 59px)', display: 'flex', flexDirection: 'column'}} >
+          <h3 style={{fontFamily: "Poppins", fontWeight: 700, fontSize: "14px", lineHeight: "21px", textAlign: 'center', marginBottom: '60px'}}>we are getting married</h3>
+          <p className={styles.namapasangan}>Yuda</p>
+          <p className={styles.namapasangan}>&</p>
+          <p className={styles.namapasangan}>Ayu</p>
+          <div style={{marginTop: '60px', marginBottom: '40px'}}>
+            <p className={styles.tamuundangan}>Kepada Yth.</p>
+            <p className={styles.tamuundangan}>Ersapta Aristo & Pasangan</p>
+            <p className={styles.tamuundangan}>di tempat</p>
+          </div>
+
+          <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
+            BUKA UNDANGAN
+          </div>
+        </div>
+
+      </div>
+      
+      <div ref={detailRef} className={`${styles.container} ${styles.detail}`} id="detail">
+        <div>
+          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/image%201.jpg'} />
+        </div>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '20px'}}>
+          <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
+          <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
+        </div>
+        <div>
+          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/image%201.jpg'} />
+        </div>
+        <div className={`${styles.quote_alkitab_container}`}>
+          <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
+          <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
+          <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
+          <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan menyempurnakan."`}</p>
+          <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>
+        </div>
+
       </div>
       <div className={`${styles.container} ${styles.pasangan}`}>
         <p>apt. Yuda Siswanto, S.Farm</p>
@@ -110,9 +137,7 @@ export default function Home() {
         <p>Terima Kasih</p>
         <p>{`“Have a good and godly marriage that shows the world Christ's love through how you sacrificially love and serve one another.”`}</p>
       </div>
-      <div className={`${styles.bottomnav}`}>
 
-      </div>
     </div>
   )
 }

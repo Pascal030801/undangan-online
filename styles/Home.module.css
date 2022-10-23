@@ -1,3 +1,13 @@
+/*
+ * bottom nav height in design 59px
+ * top bar height in design 64px
+ * padding horizontal 44px
+ * jarak dari top ke tulisan halaman greeting 155px, means 155-59 = 94px
+ * jarak dari tulisan ke bottom halaman greeting 189px, means 189 - 64 = 125px
+*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif');
+
 .undangan {
   background-color: #FEF8F2;
 }
@@ -6,3 +16,115 @@
   min-height: 100vh;
   max-height: 100vh;
 }
+
+.greeting {
+  background-color: #FFFFFF;
+}
+
+.greeting .hiasan {
+  min-width: 121px;
+  max-width: 121px;
+  min-height: 459px;
+  max-height: 459px;
+  /* z-index: 3; */
+  position: absolute;
+  background-color: #F7CB20;
+  border-radius: 57px;
+  top: -59px;
+  left: -46px;
+}
+
+.greeting .namapasangan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.greeting .tamuundangan {
+  font-family: 'PT Serif', 'serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #717171;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.bottomnav {
+  min-height: 59px;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  z-index: 2;
+  top: calc(100vh - 60px);
+}
+
+.mainbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 320px;
+  height: 50px;
+
+  background-color: #F7D039;
+  border-radius: 15px;
+
+  color: #FFFFFF;
+  font-family: 'PT Serif', 'serif';
+}
+
+.detail {
+  background-color: #FFFFFF;
+}
+
+.detail .namapasangan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .tanggal_pernikahan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #717171;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .quote_alkitab_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail .quote_alkitab_container p {
+  font-family: 'PT Serif', 'serif';
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 16px;
+  color: #717171;
+}
+
+.detail .quote_alkitab_container .quote_alkitab {}
