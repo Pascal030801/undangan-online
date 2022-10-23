@@ -43,7 +43,7 @@ export default function Home() {
           <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
         </div>
         <div>
-          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/image%201.jpg'} />
+          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1a.jpg'} />
         </div>
         <div className={`${styles.quote_alkitab_container}`}>
           <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
@@ -55,16 +55,31 @@ export default function Home() {
 
       </div>
       <div className={`${styles.container} ${styles.pasangan}`}>
-        <p>apt. Yuda Siswanto, S.Farm</p>
-        <p>Putra Pertama dari</p>
-        <p>Bapak Ali Siswanto (alm)</p>
-        <p>& Ibu Ir. Magdalena, MM</p>
-        <p>(Bengkayang)</p>
-        <p>apt. Regina Ayudyaningsari Pradani, S.Farm</p>
-        <p>putri Pertama dari</p>
-        <p>bapak Paulus Joko Prayitno, S.Pd, MM</p>
-        <p>& Ibu Retna Wikandani, S.Pd</p>
-        <p>(Bengkayang)</p>
+        <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, display: 'flex', flexDirection: 'column'}}> 
+          <div>
+            <img alt='img' style={{width: '128px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
+          </div>
+          <p className={styles.namapasangan}>apt. Yuda Siswanto, S.Farm</p>
+          <p className={styles.detailpasangan}>Putra Pertama dari</p>
+          <p className={styles.detailpasangan}>Bapak Ali Siswanto (alm)</p>
+          <p className={styles.detailpasangan}>& Ibu Ir. Magdalena, MM</p>
+          <p className={styles.detailpasangan}>(Bengkayang)</p>
+        </div>
+        <div style={{display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <div className={styles.separator}></div>
+          <p style={{fontSize: '36px', marginLeft: '18px', marginRight: '18px', fontFamily: 'Cormorant Upright'}}>&</p>
+          <div className={styles.separator}></div>
+        </div>
+        <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, display: 'flex', flexDirection: 'column'}}>
+          <div>
+            <img alt='img' style={{width: '128px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
+          </div>
+          <p className={styles.namapasangan}>apt. Regina Ayudyaningsari Pradani, S.Farm</p>
+          <p className={styles.detailpasangan}>Putri Pertama dari</p>
+          <p className={styles.detailpasangan}>Bapak Paulus Joko Prayitno, S.Pd, MM</p>
+          <p className={styles.detailpasangan}>& Ibu Retna Wikandani, S.Pd</p>
+          <p className={styles.detailpasangan}>(Bengkayang)</p>
+        </div>
       </div>
       <div className={`${styles.container} ${styles.lokasi}`}>
         <p>Pemberkatan</p>

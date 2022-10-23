@@ -7,14 +7,15 @@
 */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright');
 
 .undangan {
-  background-color: #FEF8F2;
+  background-color: #FFFFFF;
 }
 
 .container {
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: calc(100vh - 61px);
+  max-height: calc(100vh - 61px);
 }
 
 .greeting {
@@ -128,3 +129,41 @@
 }
 
 .detail .quote_alkitab_container .quote_alkitab {}
+
+.pasangan {
+  background-color: #F7D039;
+  border-radius: 90px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  padding-left: 39px;
+  padding-right: 39px;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.pasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.pasangan .separator {
+  min-width: 101px;
+  min-height: 4px;
+  background-color: #FFFFFF;
+}
+
+.pasangan .namapasangan {
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', 'serif';
+
+}
+
+.pasangan .detailpasangan {
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'PT Serif';
+}
