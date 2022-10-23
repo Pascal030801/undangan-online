@@ -167,3 +167,81 @@
   text-align: center;
   font-family: 'PT Serif';
 }
+
+.lokasi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokasi p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.lokasi .mainbutton {
+  width: 96px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #FADA5E;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.reservation {}
+
+.reservation p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gallery {}
+
+.gallery p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.gift p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift .bankcard {
+  background: linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%), linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%);
+  width: 250px;
+  height: 140px;
+  border: 4px solid #FFFFFF;
+  border-radius: 15px;
+  filter: drop-shadow(4px 4px 4px rgba(255, 230, 135, 0.53));
+  padding: 15px;
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.thankyou {}
+
+.thankyou p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
