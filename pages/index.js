@@ -102,72 +102,66 @@ export default function Home() {
 
 
   const slideImages = [
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
     {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1b%20resize.png',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1b.png',
       thumbnailHeight: '50px',
       thumbnailWidth: '50px'
     },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
     {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1b.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1b.jpg',
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1a%20resize.png',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1a.png',
       thumbnailHeight: '50px',
       thumbnailWidth: '50px'
     },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7c.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7c.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
-    {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/JKN04267.jpg',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/JKN04267.jpg',
-      thumbnailHeight: '50px',
-      thumbnailWidth: '50px'
-    },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
+    // {
+    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
+    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
+    //   thumbnailHeight: '50px',
+    //   thumbnailWidth: '50px'
+    // },
   ];
   
 
@@ -202,16 +196,30 @@ export default function Home() {
 
       </div>
       
-      <div ref={detailRef} className={`${styles.container} ${styles.detail}`} id="detail">
-        <div>
-          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/image%201.jpg'} />
+      <div ref={detailRef} className={`${styles.container} ${styles.detail}`} style={{display: 'flex', flexDirection: 'column'}} id="detail">
+        <div 
+          style={{
+            width: '100vw', 
+            flex: 3, 
+            background: 'url("/static/image1.jpg") no-repeat',
+            backgroundPosition: 'center', 
+            backgroundSize: 'cover', 
+          }}
+        >
         </div>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '20px'}}>
           <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
           <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
         </div>
-        <div>
-          <img alt='img' style={{width: '100vw'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1a.jpg'} />
+        <div 
+          style={{
+            width: '100vw', 
+            flex: 3, 
+            background: 'url("/static/1a.png") no-repeat',
+            backgroundPosition: 'center', 
+            backgroundSize: 'cover', 
+          }}
+        >
         </div>
         <div className={`${styles.quote_alkitab_container}`}>
           <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
@@ -319,10 +327,42 @@ export default function Home() {
           </form>
         </div>
       </div>
-      <div ref={galleryRef} className={`${styles.container} ${styles.gallery}`} style={{backgroundColor: '#F7CB20', borderTopLeftRadius: '90px', borderTopRightRadius: '90px', paddingTop: '50px'}}>
-        <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#FFFFFF', textAlign: 'center', marginBottom: '18px'}}>Galeri</p>
-        <div className="slide-container" style={{minWidth: '100%', minHeight: '100%'}}>
-          <ReactImageGallery items={slideImages} showThumbnails thumbnailPosition='bottom'  />
+      <div 
+        ref={galleryRef} 
+        className={`${styles.container} ${styles.gallery}`} 
+        style={{
+          backgroundColor: '#F7CB20', 
+          borderTopLeftRadius: '90px', 
+          borderTopRightRadius: '90px', 
+          paddingTop: '50px',
+          display:'flex',
+          flexDirection: 'column',
+          alignItems: '',
+          justifyItems: 'stretch',
+          justifyContent: 'space-between',
+          overflow: 'auto',
+          maskImage: 'url(/static/bggold.png)',
+          maskPosition: 'bottom'
+        }}
+      >
+        <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#FFFFFF', textAlign: 'center', marginBottom: '18px', flex: 1}}>Galeri</p>
+        <div className="slide-container" style={{ flex: 11}}>
+          <ReactImageGallery 
+            items={slideImages} 
+            showThumbnails 
+            thumbnailPosition='bottom' 
+            lazyLoad 
+            showFullscreenButton={false}
+            showPlayButton={false}
+            renderItem={(item) => {
+              return (
+                <img src={item.original} alt='image'style={{maxHeight: '60vh'}}/>
+              )
+            }}
+            renderThumbInner={(item) => {
+              return (<img src={item.thumbnail} alt='img' width={item.thumbnailWidth} height={item.thumbnailHeight} />);
+            }}
+          />
         </div>
       </div>
       <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
