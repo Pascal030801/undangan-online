@@ -188,7 +188,7 @@ export default function Home() {
           <p className={styles.namapasangan}>Ayu</p>
           <div style={{marginTop: '60px', marginBottom: '40px'}}>
             <p className={styles.tamuundangan}>Kepada Yth.</p>
-            <p className={styles.tamuundangan}>Ersapta Aristo & Pasangan</p>
+            <p className={styles.tamuundangan}>Tamu Undangan</p>
             <p className={styles.tamuundangan}>di tempat</p>
           </div>
 

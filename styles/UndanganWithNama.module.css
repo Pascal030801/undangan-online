@@ -1,0 +1,244 @@
+/*
+ * bottom nav height in design 59px
+ * top bar height in design 64px
+ * padding horizontal 44px
+ * jarak dari top ke tulisan halaman greeting 155px, means 155-59 = 94px
+ * jarak dari tulisan ke bottom halaman greeting 189px, means 189 - 64 = 125px
+*/
+
+.undangan {
+  background-color: #FFFFFF;
+}
+
+.container {
+  min-height: calc(100vh - 61px);
+  max-height: calc(100vh - 61px);
+}
+
+.greeting {
+  background-color: #FFFFFF;
+}
+
+.greeting .hiasan {
+  min-width: 121px;
+  max-width: 121px;
+  min-height: 459px;
+  max-height: 459px;
+  /* z-index: 3; */
+  position: absolute;
+  background-color: #F7CB20;
+  border-radius: 57px;
+  top: -59px;
+  left: -46px;
+}
+
+.greeting .namapasangan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.greeting .tamuundangan {
+  font-family: 'PT Serif', 'serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #717171;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.bottomnav {
+  min-height: 59px;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  z-index: 2;
+  top: calc(100vh - 60px);
+}
+
+.mainbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 320px;
+  height: 50px;
+
+  background-color: #F7D039;
+  border-radius: 15px;
+
+  color: #FFFFFF;
+  font-family: 'PT Serif', 'serif';
+}
+
+.detail {
+  background-color: #FFFFFF;
+}
+
+.detail .namapasangan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .tanggal_pernikahan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #717171;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .quote_alkitab_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail .quote_alkitab_container p {
+  font-family: 'PT Serif', 'serif';
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 16px;
+  color: #717171;
+}
+
+.detail .quote_alkitab_container .quote_alkitab {}
+
+.pasangan {
+  background-color: #F7D039;
+  border-radius: 90px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  padding-left: 39px;
+  padding-right: 39px;
+  display: flex;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+
+.pasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.pasangan .separator {
+  min-width: 101px;
+  min-height: 4px;
+  background-color: #FFFFFF;
+}
+
+.pasangan .namapasangan {
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', 'serif';
+
+}
+
+.pasangan .detailpasangan {
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'PT Serif';
+}
+
+.lokasi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokasi p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.lokasi .mainbutton {
+  width: 96px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #FADA5E;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.reservation {}
+
+.reservation p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gallery {}
+
+.gallery p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.gift p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift .bankcard {
+  background: linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%), linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%);
+  width: 250px;
+  height: 140px;
+  border: 4px solid #FFFFFF;
+  border-radius: 15px;
+  filter: drop-shadow(4px 4px 4px rgba(255, 230, 135, 0.53));
+  padding: 15px;
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.thankyou {}
+
+.thankyou p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
