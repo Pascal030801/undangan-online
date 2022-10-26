@@ -432,14 +432,20 @@ function UndanganWithNama(props) {
   )
 }
 
-// UndanganWithNama.getInitialProps = (ctx) => {
-//     console.log({ctx: ctx.query})
-    
-//     return {formattedNamaUndangan: ''}
-// }
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {params: {namaundangan: 'Ersapta+&+Pasangan'}},
+            {params: {namaundangan: 'Evan+&+Pasangan'}},
+            {params: {namaundangan: 'Viny+&+Pasangan'}},
+            {params: {namaundangan: 'Pascalis+&+Pasangan'}},
+        ],
+        fallback: true,
+    }
+  }
 
-export async function getServerSideProps(context) {
-    let {namaundangan} = context.query;
+export async function getStaticProps(context) {
+    let {namaundangan} = context.params;
     const namaundanganWord = String(namaundangan).split('+');
     let formattedNamaUndangan = '';
     for (let word of namaundanganWord) {
@@ -448,7 +454,6 @@ export async function getServerSideProps(context) {
 
     formattedNamaUndangan = formattedNamaUndangan.trim();
     return {props: {formattedNamaUndangan: formattedNamaUndangan}}
-
 }
 
 export default UndanganWithNama;
