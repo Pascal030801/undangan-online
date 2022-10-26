@@ -435,10 +435,10 @@ function UndanganWithNama(props) {
 export async function getStaticPaths() {
     return {
         paths: [
-            {params: {namaundangan: 'Ersapta+&+Pasangan'}},
-            {params: {namaundangan: 'Evan+&+Pasangan'}},
-            {params: {namaundangan: 'Viny+&+Pasangan'}},
-            {params: {namaundangan: 'Pascalis+&+Pasangan'}},
+            {params: {namaundangan: 'Ersapta+dan+Pasangan'}},
+            {params: {namaundangan: 'Evan+dan+Pasangan'}},
+            {params: {namaundangan: 'Viny+dan+Pasangan'}},
+            {params: {namaundangan: 'Pascalis+dan+Pasangan'}},
         ],
         fallback: true,
     }
@@ -449,6 +449,9 @@ export async function getStaticProps(context) {
     const namaundanganWord = String(namaundangan).split('+');
     let formattedNamaUndangan = '';
     for (let word of namaundanganWord) {
+        if(word === 'dan') {
+            word = '&';
+        }
         formattedNamaUndangan += word[0].toUpperCase() + word.slice(1) + ' ';
     }
 
