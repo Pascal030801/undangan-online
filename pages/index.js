@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/no-img-element */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef } from 'react'
@@ -114,12 +115,12 @@ export default function Home() {
       thumbnailHeight: '50px',
       thumbnailWidth: '50px'
     },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1c%20resize.png',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1c.png',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
     // {
     //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
     //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
@@ -166,7 +167,9 @@ export default function Home() {
   
 
   return (
+    <>
     <div className={styles.undangan}>
+
       <div className={`${styles.bottomnav}`}  style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
         <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGreetingDiv} />
         <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToDetailDiv} />
@@ -337,12 +340,9 @@ export default function Home() {
           paddingTop: '50px',
           display:'flex',
           flexDirection: 'column',
-          alignItems: '',
           justifyItems: 'stretch',
           justifyContent: 'space-between',
-          overflow: 'auto',
-          maskImage: 'url(/static/bggold.png)',
-          maskPosition: 'bottom'
+          overflow: 'auto'
         }}
       >
         <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#FFFFFF', textAlign: 'center', marginBottom: '18px', flex: 1}}>Galeri</p>
@@ -425,5 +425,7 @@ export default function Home() {
       </div>
       <ToastContainer />
     </div>
+    </>
+
   )
 }

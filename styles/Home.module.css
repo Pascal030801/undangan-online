@@ -5,9 +5,6 @@
  * jarak dari top ke tulisan halaman greeting 155px, means 155-59 = 94px
  * jarak dari tulisan ke bottom halaman greeting 189px, means 189 - 64 = 125px
 */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display');
-@import url('https://fonts.googleapis.com/css2?family=PT+Serif');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright');
 
 .undangan {
   background-color: #FFFFFF;
