@@ -10,6 +10,10 @@ import useLongPress from '../customHooks/useLongPress';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import db from '../utils/db'
+import Jump from 'react-reveal/Jump';
+import Slide from 'react-reveal/Slide';
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 
 function UndanganWithNama(props) {
   const greetingRef = useRef();
@@ -249,7 +253,6 @@ function UndanganWithNama(props) {
   return (
     <>
         <div className={styles.undangan}>
-
             <div className={`${styles.bottomnav}`}  style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
                 <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGreetingDiv} />
                 <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToDetailDiv} />
@@ -259,22 +262,26 @@ function UndanganWithNama(props) {
                 <FontAwesomeIcon icon={faImages} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGalleryDiv} />
                 <FontAwesomeIcon icon={faGift} style={{fontSize: '25px', color: '#FFFFFF'}}onClick={scrollToGiftDiv} />
             </div>
-            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`}>
+            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`} style={{backgroundColor: '#25316D'}}>
                 <div className={`${styles.hiasan}`}></div>
                 <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, height: 'calc(100vh - 59px)', display: 'flex', flexDirection: 'column'}} >
-                <h3 style={{fontFamily: "Poppins", fontWeight: 700, fontSize: "14px", lineHeight: "21px", textAlign: 'center', marginBottom: '60px'}}>we are getting married</h3>
-                <p className={styles.namapasangan}>Yuda</p>
-                <p className={styles.namapasangan}>&</p>
-                <p className={styles.namapasangan}>Ayu</p>
-                <div style={{marginTop: '60px', marginBottom: '40px'}}>
-                    <p className={styles.tamuundangan}>Kepada Yth.</p>
-                    <p className={styles.tamuundangan}>{props.formattedNamaUndangan}</p>
-                    <p className={styles.tamuundangan}>di tempat</p>
-                </div>
+                <Jump>
+                  <h3 style={{fontFamily: "Poppins", color: '#F6F4F4', fontWeight: 700, fontSize: "14px", lineHeight: "21px", textAlign: 'center', marginBottom: '60px'}}>we are getting married</h3>
+                </Jump>
+                <Slide bottom>
+                  <p className={styles.namapasangan}>Yuda</p>
+                  <p className={styles.namapasangan}>&</p>
+                  <p className={styles.namapasangan}>Ayu</p>
+                  <div style={{marginTop: '60px', marginBottom: '40px'}}>
+                      <p className={styles.tamuundangan}>Kepada Yth.</p>
+                      <p className={styles.tamuundangan}>{props.formattedNamaUndangan}</p>
+                      <p className={styles.tamuundangan}>di tempat</p>
+                  </div>
 
-                <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
-                    BUKA UNDANGAN
-                </div>
+                  <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
+                      BUKA UNDANGAN
+                  </div>
+                </Slide>
                 </div>
 
             </div>
@@ -290,54 +297,84 @@ function UndanganWithNama(props) {
                 }}
                 >
                 </div>
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '20px'}}>
-                <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
-                <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
-                </div>
+                <Fade>
+                  <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '20px'}}>
+                    <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
+                    <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
+                  </div>
+                </Fade>
                 <div 
-                style={{
-                    width: '100vw', 
-                    flex: 3, 
-                    background: 'url("/static/1a.png") no-repeat',
-                    backgroundPosition: 'center', 
-                    backgroundSize: 'cover', 
-                }}
+                  style={{
+                      width: '100vw', 
+                      flex: 3, 
+                      background: 'url("/static/1a.png") no-repeat',
+                      backgroundPosition: 'center', 
+                      backgroundSize: 'cover', 
+                  }}
                 >
                 </div>
-                <div className={`${styles.quote_alkitab_container}`}>
-                <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
-                <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
-                <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
-                <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan menyempurnakan."`}</p>
-                <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>
-                </div>
+                <Fade>
+                  <div className={`${styles.quote_alkitab_container}`}>
+                    <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan menyempurnakan."`}</p>
+                    <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>
+                  </div>
+                </Fade>
 
             </div>
-            <div ref={pasanganRef} className={`${styles.container} ${styles.pasangan}`}>
-                <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, display: 'flex', flexDirection: 'column'}}> 
-                <div>
-                    <img alt='img' style={{width: '128px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
-                </div>
-                <p className={styles.namapasangan}>apt. Yuda Siswanto, S.Farm</p>
-                <p className={styles.detailpasangan}>Putra Pertama dari</p>
-                <p className={styles.detailpasangan}>Bapak Ali Siswanto (alm)</p>
-                <p className={styles.detailpasangan}>& Ibu Ir. Magdalena, MM</p>
-                <p className={styles.detailpasangan}>(Bengkayang)</p>
+            <div 
+              ref={pasanganRef} 
+              className={`${styles.container} ${styles.pasangan}`} 
+              style={{
+                display: 'flex', 
+                flex: 1, 
+                flexDirection: 'column', 
+                justifyContent: 'space-evenly'
+                
+              }}
+            >
+                <div style={{alignItems: 'stretch', justifyContent: 'stretch', flex: 4, display: 'flex', flexDirection: 'column', alignContent: 'stretch', justifyItems: 'stretch',}}>
+                  <div style={{flex: '1 1 auto', justifyContent:'center', display: 'flex'}}>
+                    <Slide bottom cascade appear={true}>
+                      <img alt='img' loading='eager' style={{height: '100%', height: '100px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
+                    </Slide>
+                  </div>
+                  <div style={{flex: 10, display: 'flex', flexDirection: 'column'}}>
+                    <Slide bottom cascade >
+                      <p className={styles.namapasangan}>apt. Yuda Siswanto, S.Farm</p>
+                      <p className={styles.detailpasangan}>Putra Pertama dari</p>
+                      <p className={styles.detailpasangan}>Bapak Ali Siswanto (alm)</p>
+                      <p className={styles.detailpasangan}>& Ibu Ir. Magdalena, MM</p>
+                      <p className={styles.detailpasangan}>(Bengkayang)</p>
+                    </Slide>
+                  </div>
                 </div>
                 <div style={{display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-                <div className={styles.separator}></div>
-                <p style={{fontSize: '36px', marginLeft: '18px', marginRight: '18px', fontFamily: 'Cormorant Upright'}}>&</p>
-                <div className={styles.separator}></div>
+                  <div className={styles.separator}></div>  
+                  <Zoom>
+                    <p style={{fontSize: '36px', marginLeft: '18px', marginRight: '18px', fontFamily: 'Cormorant Upright'}}>&</p>
+                  </Zoom>
+                  <div className={styles.separator}></div>
                 </div>
-                <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, display: 'flex', flexDirection: 'column'}}>
-                <div>
-                    <img alt='img' style={{width: '128px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
-                </div>
-                <p className={styles.namapasangan}>apt. Regina Ayudyaningsari Pradani, S.Farm</p>
-                <p className={styles.detailpasangan}>Putri Pertama dari</p>
-                <p className={styles.detailpasangan}>Bapak Paulus Joko Prayitno, S.Pd, MM</p>
-                <p className={styles.detailpasangan}>& Ibu Retna Wikandani, S.Pd</p>
-                <p className={styles.detailpasangan}>(Bengkayang)</p>
+                <div style={{alignItems: 'center', justifyContent: 'center', flex: 4, display: 'flex', flexDirection: 'column'}}>
+                  <div style={{flex: 1}}>
+                    <Slide bottom cascade>
+                      <div>
+                          <img alt='img' loading='eager' style={{width: '100px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
+                      </div>
+                    </Slide>
+                  </div>
+                  <div style={{flex: 2, display: 'flex', flexDirection: 'column'}}>
+                    <Slide bottom cascade>
+                      <p className={styles.namapasangan}>apt. Regina Ayudyaningsari Pradani, S.Farm</p>
+                      <p className={styles.detailpasangan}>Putri Pertama dari</p>
+                      <p className={styles.detailpasangan}>Bapak Paulus Joko Prayitno, S.Pd, MM</p>
+                      <p className={styles.detailpasangan}>& Ibu Retna Wikandani, S.Pd</p>
+                      <p className={styles.detailpasangan}>(Bengkayang)</p>
+                    </Slide>
+                  </div>
                 </div>
             </div>
             <div ref={lokasiRef} className={`${styles.container} ${styles.lokasi}`}>

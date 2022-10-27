@@ -50,7 +50,7 @@
   font-size: 16px;
   line-height: 21px;
   text-align: center;
-  color: #717171;
+  color: #F6F4F4;
 
   margin-block-start: 0;
   margin-block-end: 0;
@@ -76,10 +76,10 @@
   width: 320px;
   height: 50px;
 
-  background-color: #F7D039;
+  background-color: #FFFFFF;
   border-radius: 15px;
 
-  color: #FFFFFF;
+  color: #25316D;
   font-family: 'PT Serif', 'serif';
 }
 
@@ -128,7 +128,7 @@
 .detail .quote_alkitab_container .quote_alkitab {}
 
 .pasangan {
-  background-color: #F7D039;
+  background-color: #25316D;
   border-radius: 90px;
   padding-top: 84px;
   padding-bottom: 84px;
@@ -155,7 +155,7 @@
   font-size: 24px;
   margin-bottom: 14px;
   font-family: 'Playfair Display', 'serif';
-
+  color: #F7CB20
 }
 
 .pasangan .detailpasangan {
