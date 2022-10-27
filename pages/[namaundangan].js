@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/no-img-element */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import styles from '../styles/UndanganWithNama.module.css'
 import {faChurch, faBuilding, faHands, faFileLines, faHeart, faLocationPin, faAddressBook, faImages, faGift} from '@fortawesome/free-solid-svg-icons'
 import ReactImageGallery from 'react-image-gallery';
@@ -9,7 +9,7 @@ import 'react-image-gallery/styles/css/image-gallery.css'
 import useLongPress from '../customHooks/useLongPress';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useRouter } from 'next/router';
+import db from '../utils/db'
 
 function UndanganWithNama(props) {
   const greetingRef = useRef();
@@ -20,7 +20,13 @@ function UndanganWithNama(props) {
   const galleryRef = useRef();
   const giftRef = useRef();
 
-  const router = useRouter();
+  const inputNama = useRef();
+  const inputUcapan = useRef();
+  const inputHadir = useRef();
+  const inputRagu = useRef();
+  const inputTidakHadir = useRef();
+
+  const [submittedUcapan, setSubmittedUcapan] = useState([]);
 
   const scrollToGreetingDiv = () => {
     greetingRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
@@ -55,40 +61,111 @@ function UndanganWithNama(props) {
     if (newWindow) newWindow.opener = null
   }
 
-  const onKonfirmasiSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    async function getReservasiData() {
+      const reservasiSubmitted = await db.collection('reservasi').get();
+      const ucapanDatas = reservasiSubmitted.docs.map((ucapan) => {
+        const ucapanData = ucapan.data();
+        return {id: ucapan.id, nama: ucapanData.nama, ucapan: ucapanData.ucapan}
+      })
+
+      setSubmittedUcapan(ucapanDatas)
+    }
+
+    getReservasiData();
+  }, [])
+
+  const onKonfirmasiSubmit = async (e) => {
+    try {
+      e.preventDefault();
+
+      let statusKehadiran;
+  
+      if(inputHadir.current.checked){
+        statusKehadiran = inputHadir.current.value;
+      }else if(inputRagu.current.checked){
+        statusKehadiran = inputRagu.current.value;
+      }else if (inputTidakHadir.current.checked) {
+        statusKehadiran = inputTidakHadir.current.value;
+      }
+  
+      const data = {
+        nama: inputNama.current.value,
+        ucapan: inputUcapan.current.value,
+        statusKehadiran: statusKehadiran
+      }
+
+      await db.collection('reservasi').add(data);
+
+      inputHadir.current.checked = false;
+      inputRagu.current.checked = false;
+      inputTidakHadir.current.checked = false;
+
+      inputNama.current.value = '';
+      inputUcapan.current.value = '';
+
+      toast('Berhasil menambahkan ucapan', {
+        position: "bottom-center",
+        autoClose: 150,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        closeButton: false,
+        type: 'success'
+      });
+    } catch (error) {
+      console.log(error)
+      toast('Gagal menambahkan data', {
+        position: "bottom-center",
+        autoClose: 150,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        closeButton: false,
+        type: 'error'
+      });
+    }
+
     
   }
 
   const onAyuLongPress = () => {
     console.log('longpress is triggered');
-    navigator.clipboard.writeText('002901141813500');
-    toast('Nomor Rekening Berhasil disalin', {
-      position: "bottom-center",
-      autoClose: 150,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: "light",
-      closeButton: false
-      });
+    navigator.clipboard.writeText('002901141813500').then(() => {
+      toast('Nomor Rekening Berhasil disalin', {
+        position: "bottom-center",
+        autoClose: 150,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        closeButton: false
+        });
+    });
   };
 
   const onYudaLongPress = () => {
     console.log('longpress is triggered');
-    navigator.clipboard.writeText('0112201500005042')
-    toast('Nomor Rekening Berhasil disalin', {
-      position: "bottom-center",
-      autoClose: 150,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: false,
-      progress: undefined,
-      theme: "light",
-      });
+    navigator.clipboard.writeText('0112201500005042').then(() => {
+      toast('Nomor Rekening Berhasil disalin', {
+        position: "bottom-center",
+        autoClose: 150,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        });
+    })
   };
 
 
@@ -287,8 +364,8 @@ function UndanganWithNama(props) {
                 Lihat Lokasi
                 </div>
             </div>
-            <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`}>
-                <div style={{backgroundColor: '#242424', marginLeft: '10px', marginRight: '10px', marginTop: '102px', marginBottom: '30px', color: '#FFFFFF', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
+            <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
+                <div style={{ flex: 6, backgroundColor: '#242424', color: '#FFFFFF', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
                 <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575}}>Konfirmasi Kehadiran</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
@@ -300,7 +377,7 @@ function UndanganWithNama(props) {
                     </div>
                     <div style={{display: 'flex', flex: 3}}>
                         <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
-                        <input type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
+                        <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
                     </div>
                     </div>
                     <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
@@ -309,21 +386,21 @@ function UndanganWithNama(props) {
                     </div>
                     <div style={{display: 'flex', flex: 3}}>
                         <label style={{marginRight: '11px'}}>:</label>
-                        <textarea rows={3} style={{width: '100%'}}  />
+                        <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
                     </div>
                     </div>
                     <div className={styles.input}>
                     <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
                     <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input type={'radio'}  value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
+                        <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
                         <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
                     </div>
                     <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
+                        <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
                         <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
                     </div>
                     <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
+                        <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
                         <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
                     </div>
                     </div>
@@ -331,7 +408,18 @@ function UndanganWithNama(props) {
                     <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#FFFFFF', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
                     </div>
                 </form>
+                
                 </div>
+                {/* <div style={{flex: 6, overflow: 'hidden'}}>
+                  {submittedUcapan.map((ucapan) => {
+                    return (
+                      <div key={ucapan.id} style={{display: 'flex', alignItems: 'flex-start', flexDirection: 'column'}}>
+                        <p>{ucapan.nama}</p>
+                        <p>{ucapan.ucapan}</p>
+                      </div>
+                    )
+                  })}
+                </div> */}
             </div>
             <div 
                 ref={galleryRef} 
