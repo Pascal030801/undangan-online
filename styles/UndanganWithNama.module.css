@@ -183,7 +183,8 @@
   width: 96px;
   height: 30px;
   font-size: 12px;
-  background-color: #FADA5E;
+  background-color: #25316D;
+  color: #FFFFFF;
   border-top-left-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 5px;
@@ -223,12 +224,12 @@
 }
 
 .gift .bankcard {
-  background: linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%), linear-gradient(105.91deg, #FFE687 3.6%, #F7CB20 97.01%);
+  background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
   width: 250px;
   height: 140px;
   border: 4px solid #FFFFFF;
   border-radius: 15px;
-  filter: drop-shadow(4px 4px 4px rgba(255, 230, 135, 0.53));
+  filter: drop-shadow(4px 4px 4px #6E85B7);
   padding: 15px;
   padding-left: 13px;
   display: flex;

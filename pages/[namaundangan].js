@@ -134,9 +134,7 @@ function UndanganWithNama(props) {
         closeButton: false,
         type: 'error'
       });
-    }
-
-    
+    }    
   }
 
   const onAyuLongPress = () => {
@@ -378,31 +376,39 @@ function UndanganWithNama(props) {
                 </div>
             </div>
             <div ref={lokasiRef} className={`${styles.container} ${styles.lokasi}`}>
-                <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#F7CB20'}}>Pemberkatan</p>
-                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F7CB20'}}></div>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>09:00-Selesai</p>
-                <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F7CB20'}}></div>
-                <FontAwesomeIcon icon={faChurch} style={{fontSize: '55px', marginBottom: '14px'}} />
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060',}}>Gereja Santo Pius X</p>
+                <Fade top>
+                  <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#6E85B7'}}>Pemberkatan</p>
+                </Fade>
+                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                <Slide bottom cascade>
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>09:00-Selesai</p>
+                  <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                  <FontAwesomeIcon icon={faChurch} style={{fontSize: '55px', marginBottom: '14px'}} />
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060',}}>Gereja Santo Pius X</p>
+                </Slide>
                 <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060', marginBottom: '14px'}}>Bengkayang</p>
                 <div className={`${styles.mainbutton}`} onClick={() => {openInNewTab('https://goo.gl/maps/vPCWqfYSJzg3E5GY8')}}>
-                Lihat Lokasi
+                  Lihat Lokasi
                 </div>
-                <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#F7CB20'}}>Resepsi</p>
-                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F7CB20'}}></div>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>12:00-19:00</p>
-                <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F7CB20'}}></div>
-                <FontAwesomeIcon icon={faBuilding} style={{fontSize: '55px', marginBottom: '14px'}} />
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060'}}>Hotel Lala Golden</p>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060', marginBottom: '14px'}}>Bengkayang</p>
+                <Fade top>
+                  <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#6E85B7'}}>Resepsi</p>
+                </Fade>
+                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                <Slide bottom cascade>
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>12:00-19:00</p>
+                  <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                  <FontAwesomeIcon icon={faBuilding} style={{fontSize: '55px', marginBottom: '14px'}} />
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060'}}>Hotel Lala Golden</p>
+                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060', marginBottom: '14px'}}>Bengkayang</p>
+                </Slide>
                 <div className={`${styles.mainbutton}`} onClick={() => {openInNewTab('https://goo.gl/maps/zo3ctXy9Rh1dnzUo6')}}>
-                Lihat Lokasi
+                  Lihat Lokasi
                 </div>
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
-                <div style={{ flex: 6, backgroundColor: '#242424', color: '#FFFFFF', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
+                <div style={{ flex: 6, backgroundColor: '#25316D', color: '#FFFFFF', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
                 <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575}}>Konfirmasi Kehadiran</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
@@ -462,7 +468,7 @@ function UndanganWithNama(props) {
                 ref={galleryRef} 
                 className={`${styles.container} ${styles.gallery}`} 
                 style={{
-                backgroundColor: '#F7CB20', 
+                backgroundColor: '#25316D', 
                 borderTopLeftRadius: '90px', 
                 borderTopRightRadius: '90px', 
                 paddingTop: '50px',
@@ -493,7 +499,7 @@ function UndanganWithNama(props) {
                 />
                 </div>
             </div>
-            <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
+            <div ref={giftRef} className={`${styles.container} ${styles.gift}`} style={{paddingTop: '100px', paddingBottom: '100px'}}>
                 <p style={{color: '#F7CB20', fontSize: '40px', fontWeight: 700, fontFamily: 'Playfair Display', marginBottom: '30px'}}>Gift</p>
                 <p style={{color: '#717171', fontSize: '14px', fontWeight: 600, fontFamily: 'PT Serif', marginBottom: '30px'}}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda. Anda dapat memberi kado secara cashless.</p>
                 <div className={styles.bankcard} style={{marginBottom: '22px'}} {...ayuBankLongPress}>
@@ -524,7 +530,7 @@ function UndanganWithNama(props) {
                 </div>
 
                 <p style={{fontFamily: 'PT Serif', fontSize: '24px', fontWeight: 700, color: '#717171'}}>Kirim Hadiah</p>
-                <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#FFD840'}}></div>
+                <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
                 <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Rumah Kami</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Jl.Trisula, Gang Aur No 18,</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Bukit Batu, Singkawang.</p>
@@ -541,7 +547,7 @@ function UndanganWithNama(props) {
                     zIndex: 1,
                 }}>
                     <div style={{zIndex: 3,   background: 'rgba(0, 0, 0, 0.4)', minHeight: '100vw', minWidth: '100vw'}}>
-                    <p style={{color: '#F7D039', fontWeight: 700, fontSize: '40px', fontFamily: 'Playfair Display', zIndex: 1, backgroundColor: 'transparent'}}>Terima Kasih</p>
+                    <p style={{color: '#F7D039', fontWeight: 700, fontSize: '40px', fontFamily: 'Playfair Display', zIndex: 1, backgroundColor: 'transparent', paddingTop: '40px'}}>Terima Kasih</p>
                     </div>
                 </div>
                 <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 60px', flexDirection: 'column'}}>
