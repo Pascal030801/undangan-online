@@ -7,7 +7,7 @@
 */
 
 .undangan {
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
 }
 
 .bottomnav {
@@ -49,9 +49,10 @@
 }
 
 .greeting .namapasangan {
-  font-family: 'Playfair Display', 'serif';
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 48px;
   text-align: center;
   color: #F7D039;
@@ -88,11 +89,212 @@
   width: 320px;
   height: 50px;
 
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
   border-radius: 15px;
 
   color: #25316D;
   font-family: 'PT Serif', 'serif';
+}
+
+.detail {
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail .namapasangan {
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .tanggal_pernikahan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #717171;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .quote_alkitab_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail .quote_alkitab_container p {
+  font-family: 'PT Serif', 'serif';
+  text-align: center;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 16px;
+  color: #717171;
+}
+
+.detail .quote_alkitab_container .quote_alkitab {}
+
+.pasangan {
+  background-color: #25316D;
+  border-radius: 90px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  padding-left: 39px;
+  padding-right: 39px;
+  display: flex;
+  flex-direction: column;
+  color: #F9F9F9;
+}
+
+.pasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.pasangan .separator {
+  min-width: 101px;
+  min-height: 4px;
+  background-color: #F9F9F9;
+}
+
+.pasangan .namapasangan {
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', 'serif';
+  color: #F7CB20
+}
+
+.pasangan .detailpasangan {
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'PT Serif';
+}
+
+.lokasi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokasi p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.lokasi .mainbutton {
+  width: 96px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #25316D;
+  color: #F9F9F9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.reservation {}
+
+.reservation p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gallery {}
+
+.gallery p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.gift p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift .bankcard {
+  background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
+  width: 250px;
+  height: 1px;
+  min-height: 140px;
+  border: 4px solid #F9F9F9;
+  border-radius: 15px;
+  filter: drop-shadow(4px 4px 4px #6E85B7);
+  padding: 15px;
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gift .title {
+  color: #F7CB20;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  margin-bottom: 30px;
+}
+
+.gift .subtitle {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'PT Serif';
+  margin-bottom: 30px;
+}
+
+.gift .bankcard .norek {
+  font-family: 'PT Serif';
+  font-size: 20px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.gift .bankcard .detailrek {
+  font-family: 'PT Serif';
+  font-size: 12px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.thankyou {
+  min-height: 75vh;
+}
+
+.thankyou p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
 }
 
 @media screen and (max-width: 412px) {
@@ -113,6 +315,7 @@
     .greeting .announcement {
       font-size: 19px;
       margin-top: 50px;
+      font-family: 'Gudea';
     }
 
     .greeting .text_container {
@@ -138,7 +341,7 @@
     }
 
     .greeting .tamuundangan {
-      margin-top: 75px;
+      margin-top: 11%;
       font-size: 14px;
     }
 
@@ -150,6 +353,54 @@
     .container {
       min-height: calc(100vh - 60px);
       max-height: calc(100vh - 60px);
+    }
+
+    .pasangan .namapasangan {
+      font-size: 6.1vw;
+      margin-bottom: 14px;
+      font-family: 'Playfair Display', 'serif';
+      color: #F7CB20
+    }
+
+    .gift {
+      padding: 30px 20px;
+    }
+
+    .gift .bankcard {
+      background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
+      width: 240px;
+      height: 1px;
+      min-height: 120px;
+      border: 4px solid #F9F9F9;
+      border-radius: 15px;
+      filter: drop-shadow(4px 4px 4px #6E85B7);
+      padding: 15px;
+      padding-left: 13px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gift .title {
+      margin-bottom: 20px;
+    }
+
+    .gift .subtitle {
+      margin-bottom: 20px;
+    }
+
+
+    .gift .bankcard .norek {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .gift .bankcard .detailrek {
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .thankyou {
+      min-height: 90vh;
     }
   }
 
@@ -206,6 +457,13 @@
       min-height: calc(100vh - 80px);
       max-height: calc(100vh - 80px);
     }
+
+    .gift {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
   }
 }
 
@@ -213,165 +471,4 @@
   @media screen and (max-height: 896px) {}
 
   @media screen and (min-height: 896px) {}
-}
-
-.detail {
-  background-color: #FFFFFF;
-}
-
-.detail .namapasangan {
-  font-family: 'Playfair Display', 'serif';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  text-align: center;
-  color: #F7D039;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-}
-
-.detail .tanggal_pernikahan {
-  font-family: 'Playfair Display', 'serif';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 20px;
-  text-align: center;
-  color: #717171;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-}
-
-.detail .quote_alkitab_container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.detail .quote_alkitab_container p {
-  font-family: 'PT Serif', 'serif';
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  font-size: 16px;
-  color: #717171;
-}
-
-.detail .quote_alkitab_container .quote_alkitab {}
-
-.pasangan {
-  background-color: #25316D;
-  border-radius: 90px;
-  padding-top: 84px;
-  padding-bottom: 84px;
-  padding-left: 39px;
-  padding-right: 39px;
-  display: flex;
-  flex-direction: column;
-  color: #FFFFFF;
-}
-
-.pasangan p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.pasangan .separator {
-  min-width: 101px;
-  min-height: 4px;
-  background-color: #FFFFFF;
-}
-
-.pasangan .namapasangan {
-  font-size: 24px;
-  margin-bottom: 14px;
-  font-family: 'Playfair Display', 'serif';
-  color: #F7CB20
-}
-
-.pasangan .detailpasangan {
-  font-size: 14px;
-  font-weight: 550;
-  text-align: center;
-  font-family: 'PT Serif';
-}
-
-.lokasi {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.lokasi p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.lokasi .mainbutton {
-  width: 96px;
-  height: 30px;
-  font-size: 12px;
-  background-color: #25316D;
-  color: #FFFFFF;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.reservation {}
-
-.reservation p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.gallery {}
-
-.gallery p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.gift {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left: 80px;
-  padding-right: 80px;
-}
-
-.gift p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.gift .bankcard {
-  background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
-  width: 250px;
-  height: 140px;
-  border: 4px solid #FFFFFF;
-  border-radius: 15px;
-  filter: drop-shadow(4px 4px 4px #6E85B7);
-  padding: 15px;
-  padding-left: 13px;
-  display: flex;
-  flex-direction: column;
-}
-
-.thankyou {}
-
-.thankyou p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
 }

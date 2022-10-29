@@ -30,33 +30,42 @@ function Home() {
   const inputRagu = useRef();
   const inputTidakHadir = useRef();
 
+  const bgMusicRef = useRef();
+
   const [submittedUcapan, setSubmittedUcapan] = useState([]);
 
   const scrollToGreetingDiv = () => {
+    bgMusicRef.current.play();
     greetingRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToDetailDiv = () => {
+    bgMusicRef.current.play();
     detailRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToPasanganDiv = () => {
+    bgMusicRef.current.play();
     pasanganRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToLokasilDiv = () => {
+    bgMusicRef.current.play();
     lokasiRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToReservationDiv = () => {
+    bgMusicRef.current.play();
     reservationRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToGalleryDiv = () => {
+    bgMusicRef.current.play();
     galleryRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToGiftDiv = () => {
+    bgMusicRef.current.play();
     giftRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
@@ -73,7 +82,7 @@ function Home() {
         return {id: ucapan.id, nama: ucapanData.nama, ucapan: ucapanData.ucapan}
       })
 
-      setSubmittedUcapan(ucapanDatas)
+      setSubmittedUcapan(ucapanDatas);
     }
 
     getReservasiData();
@@ -170,7 +179,6 @@ function Home() {
     })
   };
 
-
   const onClick = () => {
     console.log('click is triggered')
   }
@@ -251,40 +259,52 @@ function Home() {
   return (
     <>
         <div className={styles.undangan}>
+            <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop=''>
+              <source src="/static/background_music.mp3" type="audio/mp3" />
+            </audio>
             <div className={`${styles.bottomnav}`}  style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
-                <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGreetingDiv} />
-                <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToDetailDiv} />
-                <FontAwesomeIcon icon={faHeart} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToPasanganDiv} />
-                <FontAwesomeIcon icon={faLocationPin} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToLokasilDiv} />
-                <FontAwesomeIcon icon={faAddressBook} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToReservationDiv} />
-                <FontAwesomeIcon icon={faImages} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGalleryDiv} />
-                <FontAwesomeIcon icon={faGift} style={{fontSize: '25px', color: '#FFFFFF'}}onClick={scrollToGiftDiv} />
+                <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGreetingDiv} />
+                <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToDetailDiv} />
+                <FontAwesomeIcon icon={faHeart} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToPasanganDiv} />
+                <FontAwesomeIcon icon={faLocationPin} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToLokasilDiv} />
+                <FontAwesomeIcon icon={faAddressBook} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToReservationDiv} />
+                <FontAwesomeIcon icon={faImages} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGalleryDiv} />
+                <FontAwesomeIcon icon={faGift} style={{fontSize: '25px', color: '#F9F9F9'}}onClick={scrollToGiftDiv} />
             </div>
-            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`} style={{backgroundColor: '#25316D'}}>
+            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`}>
                 <div className={`${styles.hiasan}`}></div>
-                <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, height: 'calc(100vh - 59px)', display: 'flex', flexDirection: 'column'}} >
-                <Jump>
-                  <h3 style={{fontFamily: "Poppins", color: '#F6F4F4', fontWeight: 700, fontSize: "14px", lineHeight: "21px", textAlign: 'center', marginBottom: '60px'}}>we are getting married</h3>
-                </Jump>
-                <Slide bottom>
-                  <p className={styles.namapasangan}>Yuda</p>
-                  <p className={styles.namapasangan}>&</p>
-                  <p className={styles.namapasangan}>Ayu</p>
-                  <div style={{marginTop: '60px', marginBottom: '40px'}}>
-                      <p className={styles.tamuundangan}>Kepada Yth.</p>
-                      <p className={styles.tamuundangan}>Tamu Undangan</p>
-                      <p className={styles.tamuundangan}>di tempat</p>
-                  </div>
+                <div className={`${styles.text_container}`} >
+                  <Jump>
+                    <h3 className={`${styles.announcement}`}>We Are Getting Married</h3>
+                  </Jump>
+                  <Slide bottom>
+                    <div className={styles.namapasangan}>
+                      <p>Yuda</p>
+                      <p>&</p>
+                      <p>Ayu</p>
+                    </div>
+                    
+                    <div className={styles.tamuundangan}>
+                        <p>Kepada Yth.</p>
+                        <p>{props.formattedNamaUndangan}</p>
+                        <p>di tempat</p>
+                    </div>
 
-                  <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
-                      BUKA UNDANGAN
+                    
+                  </Slide>
+                </div>
+                <Slide bottom>
+                  <div className={`${styles.container} ${styles.button_container}`}>
+                    <div className={`${styles.button_wrapper}`}>
+                      <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
+                          BUKA UNDANGAN
+                      </div>
+                    </div>
                   </div>
                 </Slide>
-                </div>
-
             </div>
             
-            <div ref={detailRef} className={`${styles.container} ${styles.detail}`} style={{display: 'flex', flexDirection: 'column'}} id="detail">
+            <div ref={detailRef} className={`${styles.container} ${styles.detail}`}>
                 <div 
                 style={{
                     width: '100vw', 
@@ -366,7 +386,10 @@ function Home() {
                   </div>
                   <div style={{flex: 2, display: 'flex', flexDirection: 'column'}}>
                     <Slide bottom cascade>
-                      <p className={styles.namapasangan}>apt. Regina Ayudyaningsari Pradani, S.Farm</p>
+                      <div className={styles.namapasangan}>
+                        <p>apt. Regina Ayudyaningsari</p>
+                        <p>Pradani, S.Farm</p>
+                      </div>
                       <p className={styles.detailpasangan}>Putri Pertama dari</p>
                       <p className={styles.detailpasangan}>Bapak Paulus Joko Prayitno, S.Pd, MM</p>
                       <p className={styles.detailpasangan}>& Ibu Retna Wikandani, S.Pd</p>
@@ -408,10 +431,10 @@ function Home() {
                 </div>
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
-                <div style={{ flex: 6, backgroundColor: '#25316D', color: '#FFFFFF', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
+                <div style={{ flex: 6, backgroundColor: '#25316D', color: '#F9F9F9', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
                 <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575}}>Konfirmasi Kehadiran</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#FFFFFF', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
+                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
+                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
 
                 <form>
                     <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
@@ -448,7 +471,7 @@ function Home() {
                     </div>
                     </div>
                     <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
-                    <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#FFFFFF', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
+                    <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
                     </div>
                 </form>
                 
@@ -479,7 +502,7 @@ function Home() {
                 overflow: 'auto'
                 }}
             >
-                <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#FFFFFF', textAlign: 'center', marginBottom: '18px', flex: 1}}>Galeri</p>
+                <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#F9F9F9', textAlign: 'center', marginBottom: '18px', flex: 1}}>Galeri</p>
                 <div className="slide-container" style={{ flex: 11}}>
                 <ReactImageGallery 
                     items={slideImages} 
@@ -499,34 +522,34 @@ function Home() {
                 />
                 </div>
             </div>
-            <div ref={giftRef} className={`${styles.container} ${styles.gift}`} style={{paddingTop: '100px', paddingBottom: '100px'}}>
-                <p style={{color: '#F7CB20', fontSize: '40px', fontWeight: 700, fontFamily: 'Playfair Display', marginBottom: '30px'}}>Gift</p>
-                <p style={{color: '#717171', fontSize: '14px', fontWeight: 600, fontFamily: 'PT Serif', marginBottom: '30px'}}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda. Anda dapat memberi kado secara cashless.</p>
+            <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
+                <p className={`${styles.title}`}>Gift</p>
+                <p className={`${styles.subtitle}`}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda. Anda dapat memberi kado secara cashless.</p>
                 <div className={styles.bankcard} style={{marginBottom: '22px'}} {...ayuBankLongPress}>
-                <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
-                    <img 
-                    src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/logo-bri-600x600%201.png' 
-                    alt='rekening ayu'
-                    width={'37px'}
-                    height={'34px'}
-                    />
-                </div>
-                <p style={{fontFamily: 'PT Serif', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>002901141813500</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '12px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>A/N</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '12px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>Regina Ayudyaningsari Pradani</p>
+                  <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+                      <img 
+                      src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/logo-bri-600x600%201.png' 
+                      alt='rekening ayu'
+                      width={'37px'}
+                      height={'34px'}
+                      />
+                  </div>
+                  <p className={`${styles.norek}`}>002901141813500</p>
+                  <p className={`${styles.detailrek}`}>A/N</p>
+                  <p className={`${styles.detailrek}`}>Regina Ayudyaningsari Pradani</p>
                 </div>
                 <div className={styles.bankcard} style={{marginBottom: '42px'}} {...yudaBankLongPress}>
-                <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
-                    <img 
-                    src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Logo%20Bank%20BTN.png' 
-                    alt='rekening yuda' 
-                    width={'89px'}
-                    height={'40px'}
-                    />
-                </div>
-                <p style={{fontFamily: 'PT Serif', fontSize: '20px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>0112201500005042</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '12px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>A/N</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '12px', fontWeight: 700, color: '#FFFFFF', textAlign:'left'}}>Yuda Siswanto</p>
+                  <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
+                      <img 
+                      src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Logo%20Bank%20BTN.png' 
+                      alt='rekening yuda' 
+                      width={'89px'}
+                      height={'40px'}
+                      />
+                  </div>
+                  <p className={`${styles.norek}`}>0112201500005042</p>
+                  <p className={`${styles.detailrek}`}>A/N</p>
+                  <p className={`${styles.detailrek}`}>Yuda Siswanto</p>
                 </div>
 
                 <p style={{fontFamily: 'PT Serif', fontSize: '24px', fontWeight: 700, color: '#717171'}}>Kirim Hadiah</p>
@@ -535,7 +558,7 @@ function Home() {
                 <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Jl.Trisula, Gang Aur No 18,</p>
                 <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Bukit Batu, Singkawang.</p>
             </div>
-            <div className={`${styles.thankyou}`} style={{ minHeight: '75vh'}}>
+            <div className={`${styles.thankyou}`} style={{ minHeight: '80vh'}}>
                 <div 
                 style={{
                     background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/static/thankyoubg.jpg") no-repeat', 
@@ -547,14 +570,14 @@ function Home() {
                     zIndex: 1,
                 }}>
                     <div style={{zIndex: 3,   background: 'rgba(0, 0, 0, 0.4)', minHeight: '100vw', minWidth: '100vw'}}>
-                    <p style={{color: '#F7D039', fontWeight: 700, fontSize: '40px', fontFamily: 'Playfair Display', zIndex: 1, backgroundColor: 'transparent', paddingTop: '40px'}}>Terima Kasih</p>
+                      <p style={{color: '#F7D039', fontWeight: 700, fontSize: '40px', fontFamily: 'Playfair Display', zIndex: 1, backgroundColor: 'transparent', paddingTop: '40px'}}>Terima Kasih</p>
                     </div>
                 </div>
                 <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 60px', flexDirection: 'column'}}>
-                <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`“have a good and goldy marriage`}</p>
-                <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`that shows the world Christ's love`}</p>
-                <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`through how you sacrificially love and serve`}</p>
-                <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`one another.”`}</p>
+                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`“have a good and goldy marriage`}</p>
+                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`that shows the world Christ's love`}</p>
+                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`through how you sacrificially love and serve`}</p>
+                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`one another.”`}</p>
                 </div>
             </div>
             <ToastContainer />

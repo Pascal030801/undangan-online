@@ -7,38 +7,58 @@
 */
 
 .undangan {
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
 }
 
-.container {
-  min-height: calc(100vh - 61px);
-  max-height: calc(100vh - 61px);
+.bottomnav {
+  min-height: 60px;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  z-index: 2;
+  top: calc(100vh - 60px);
 }
 
 .greeting {
-  background-color: #FFFFFF;
+  background-color: #25316D;
+  display: flex;
+  flex-direction: column;
 }
 
-.greeting .hiasan {
-  min-width: 121px;
-  max-width: 121px;
-  min-height: 459px;
-  max-height: 459px;
-  /* z-index: 3; */
-  position: absolute;
-  background-color: #F7CB20;
-  border-radius: 57px;
-  top: -59px;
-  left: -46px;
+.container {
+  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+}
+
+.greeting .text_container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* padding: 30px 0; */
+}
+
+.greeting .announcement {
+  font-family: 'Poppins';
+  color: #F6F4F4;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
 }
 
 .greeting .namapasangan {
-  font-family: 'Playfair Display', 'serif';
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 48px;
   text-align: center;
   color: #F7D039;
+}
+
+.greeting .namapasangan p {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
@@ -51,18 +71,11 @@
   line-height: 21px;
   text-align: center;
   color: #F6F4F4;
-
-  margin-block-start: 0;
-  margin-block-end: 0;
 }
 
-.bottomnav {
-  min-height: 59px;
-  width: 100%;
-  background-color: #000000;
-  position: fixed;
-  z-index: 2;
-  top: calc(100vh - 60px);
+.greeting .tamuundangan p {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .mainbutton {
@@ -76,7 +89,7 @@
   width: 320px;
   height: 50px;
 
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
   border-radius: 15px;
 
   color: #25316D;
@@ -84,11 +97,14 @@
 }
 
 .detail {
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
 }
 
 .detail .namapasangan {
-  font-family: 'Playfair Display', 'serif';
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -113,12 +129,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .detail .quote_alkitab_container p {
   font-family: 'PT Serif', 'serif';
+  text-align: center;
   margin-block-start: 0px;
   margin-block-end: 0px;
   font-size: 16px;
@@ -136,7 +154,7 @@
   padding-right: 39px;
   display: flex;
   flex-direction: column;
-  color: #FFFFFF;
+  color: #F9F9F9;
 }
 
 .pasangan p {
@@ -148,7 +166,7 @@
 .pasangan .separator {
   min-width: 101px;
   min-height: 4px;
-  background-color: #FFFFFF;
+  background-color: #F9F9F9;
 }
 
 .pasangan .namapasangan {
@@ -184,7 +202,7 @@
   height: 30px;
   font-size: 12px;
   background-color: #25316D;
-  color: #FFFFFF;
+  color: #F9F9F9;
   border-top-left-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 5px;
@@ -226,8 +244,9 @@
 .gift .bankcard {
   background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
   width: 250px;
-  height: 140px;
-  border: 4px solid #FFFFFF;
+  height: 1px;
+  min-height: 140px;
+  border: 4px solid #F9F9F9;
   border-radius: 15px;
   filter: drop-shadow(4px 4px 4px #6E85B7);
   padding: 15px;
@@ -236,10 +255,220 @@
   flex-direction: column;
 }
 
-.thankyou {}
+.gift .title {
+  color: #F7CB20;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  margin-bottom: 30px;
+}
+
+.gift .subtitle {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'PT Serif';
+  margin-bottom: 30px;
+}
+
+.gift .bankcard .norek {
+  font-family: 'PT Serif';
+  font-size: 20px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.gift .bankcard .detailrek {
+  font-family: 'PT Serif';
+  font-size: 12px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.thankyou {
+  min-height: 75vh;
+}
 
 .thankyou p {
   margin-block-start: 0px;
   margin-block-end: 0px;
   text-align: center;
+}
+
+@media screen and (max-width: 412px) {
+  @media screen and (max-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      z-index: 3;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 19px;
+      margin-top: 50px;
+      font-family: 'Gudea';
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 11%;
+      font-size: 14px;
+    }
+
+    .bottomnav {
+      min-height: 60px;
+      top: calc(100vh - 61px);
+    }
+
+    .container {
+      min-height: calc(100vh - 60px);
+      max-height: calc(100vh - 60px);
+    }
+
+    .pasangan .namapasangan {
+      font-size: 6.1vw;
+      margin-bottom: 14px;
+      font-family: 'Playfair Display', 'serif';
+      color: #F7CB20
+    }
+
+    .gift {
+      padding: 30px 20px;
+    }
+
+    .gift .bankcard {
+      background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
+      width: 240px;
+      height: 1px;
+      min-height: 120px;
+      border: 4px solid #F9F9F9;
+      border-radius: 15px;
+      filter: drop-shadow(4px 4px 4px #6E85B7);
+      padding: 15px;
+      padding-left: 13px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gift .title {
+      margin-bottom: 20px;
+    }
+
+    .gift .subtitle {
+      margin-bottom: 20px;
+    }
+
+
+    .gift .bankcard .norek {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .gift .bankcard .detailrek {
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .thankyou {
+      min-height: 90vh;
+    }
+  }
+
+  @media screen and (min-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 20px;
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 110px;
+      font-size: 20px;
+    }
+
+    .bottomnav {
+      min-height: 80px;
+      top: calc(100vh - 81px);
+    }
+
+    .container {
+      min-height: calc(100vh - 80px);
+      max-height: calc(100vh - 80px);
+    }
+
+    .gift {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+}
+
+@media screen and (min-width: 412px) and (max-width: 601px) {
+  @media screen and (max-height: 896px) {}
+
+  @media screen and (min-height: 896px) {}
 }
