@@ -286,7 +286,7 @@ function Home() {
                     
                     <div className={styles.tamuundangan}>
                         <p>Kepada Yth.</p>
-                        <p>{props.formattedNamaUndangan}</p>
+                        <p>Tamu Undangan</p>
                         <p>di tempat</p>
                     </div>
 
