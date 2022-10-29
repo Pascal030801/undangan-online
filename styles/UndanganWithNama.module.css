@@ -10,26 +10,42 @@
   background-color: #FFFFFF;
 }
 
-.container {
-  min-height: calc(100vh - 61px);
-  max-height: calc(100vh - 61px);
+.bottomnav {
+  min-height: 60px;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  z-index: 2;
+  top: calc(100vh - 60px);
 }
 
 .greeting {
-  background-color: #FFFFFF;
+  background-color: #25316D;
+  display: flex;
+  flex-direction: column;
 }
 
-.greeting .hiasan {
-  min-width: 121px;
-  max-width: 121px;
-  min-height: 459px;
-  max-height: 459px;
-  /* z-index: 3; */
-  position: absolute;
-  background-color: #F7CB20;
-  border-radius: 57px;
-  top: -59px;
-  left: -46px;
+.container {
+  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+}
+
+.greeting .text_container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* padding: 30px 0; */
+}
+
+.greeting .announcement {
+  font-family: 'Poppins';
+  color: #F6F4F4;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
 }
 
 .greeting .namapasangan {
@@ -39,6 +55,9 @@
   font-size: 48px;
   text-align: center;
   color: #F7D039;
+}
+
+.greeting .namapasangan p {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
@@ -51,18 +70,11 @@
   line-height: 21px;
   text-align: center;
   color: #F6F4F4;
-
-  margin-block-start: 0;
-  margin-block-end: 0;
 }
 
-.bottomnav {
-  min-height: 59px;
-  width: 100%;
-  background-color: #000000;
-  position: fixed;
-  z-index: 2;
-  top: calc(100vh - 60px);
+.greeting .tamuundangan p {
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
 .mainbutton {
@@ -81,6 +93,126 @@
 
   color: #25316D;
   font-family: 'PT Serif', 'serif';
+}
+
+@media screen and (max-width: 412px) {
+  @media screen and (max-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      z-index: 3;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 19px;
+      margin-top: 50px;
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 75px;
+      font-size: 14px;
+    }
+
+    .bottomnav {
+      min-height: 60px;
+      top: calc(100vh - 61px);
+    }
+
+    .container {
+      min-height: calc(100vh - 60px);
+      max-height: calc(100vh - 60px);
+    }
+  }
+
+  @media screen and (min-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 20px;
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 110px;
+      font-size: 20px;
+    }
+
+    .bottomnav {
+      min-height: 80px;
+      top: calc(100vh - 81px);
+    }
+
+    .container {
+      min-height: calc(100vh - 80px);
+      max-height: calc(100vh - 80px);
+    }
+  }
+}
+
+@media screen and (min-width: 412px) and (max-width: 601px) {
+  @media screen and (max-height: 896px) {}
+
+  @media screen and (min-height: 896px) {}
 }
 
 .detail {

@@ -260,28 +260,37 @@ function UndanganWithNama(props) {
                 <FontAwesomeIcon icon={faImages} style={{fontSize: '25px', color: '#FFFFFF'}} onClick={scrollToGalleryDiv} />
                 <FontAwesomeIcon icon={faGift} style={{fontSize: '25px', color: '#FFFFFF'}}onClick={scrollToGiftDiv} />
             </div>
-            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`} style={{backgroundColor: '#25316D'}}>
+            <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`}>
                 <div className={`${styles.hiasan}`}></div>
-                <div style={{alignItems: 'center', justifyContent: 'center', flex: 1, height: 'calc(100vh - 59px)', display: 'flex', flexDirection: 'column'}} >
-                <Jump>
-                  <h3 style={{fontFamily: "Poppins", color: '#F6F4F4', fontWeight: 700, fontSize: "14px", lineHeight: "21px", textAlign: 'center', marginBottom: '60px'}}>we are getting married</h3>
-                </Jump>
-                <Slide bottom>
-                  <p className={styles.namapasangan}>Yuda</p>
-                  <p className={styles.namapasangan}>&</p>
-                  <p className={styles.namapasangan}>Ayu</p>
-                  <div style={{marginTop: '60px', marginBottom: '40px'}}>
-                      <p className={styles.tamuundangan}>Kepada Yth.</p>
-                      <p className={styles.tamuundangan}>{props.formattedNamaUndangan}</p>
-                      <p className={styles.tamuundangan}>di tempat</p>
-                  </div>
+                <div className={`${styles.text_container}`} >
+                  <Jump>
+                    <h3 className={`${styles.announcement}`}>we are getting married</h3>
+                  </Jump>
+                  <Slide bottom>
+                    <div className={styles.namapasangan}>
+                      <p>Yuda</p>
+                      <p>&</p>
+                      <p>Ayu</p>
+                    </div>
+                    
+                    <div className={styles.tamuundangan}>
+                        <p>Kepada Yth.</p>
+                        <p>{props.formattedNamaUndangan}</p>
+                        <p>di tempat</p>
+                    </div>
 
-                  <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
-                      BUKA UNDANGAN
+                    
+                  </Slide>
+                </div>
+                <Slide bottom>
+                  <div className={`${styles.container} ${styles.button_container}`}>
+                    <div className={`${styles.button_wrapper}`}>
+                      <div className={`${styles.mainbutton}`} onClick={scrollToDetailDiv}>
+                          BUKA UNDANGAN
+                      </div>
+                    </div>
                   </div>
                 </Slide>
-                </div>
-
             </div>
             
             <div ref={detailRef} className={`${styles.container} ${styles.detail}`} style={{display: 'flex', flexDirection: 'column'}} id="detail">
