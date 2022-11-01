@@ -78,6 +78,23 @@
   margin-block-end: 0;
 }
 
+.greeting .button_container {
+  z-index: 4;
+  position: absolute;
+  display: flex;
+  min-width: 100vw;
+
+}
+
+.greeting .button_wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15%;
+}
+
 .mainbutton {
   display: flex;
   flex-direction: column;

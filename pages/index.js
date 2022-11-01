@@ -3,7 +3,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react'
 import styles from '../styles/UndanganWithNama.module.css'
-import {faChurch, faBuilding, faHands, faFileLines, faHeart, faLocationPin, faAddressBook, faImages, faGift} from '@fortawesome/free-solid-svg-icons'
+import {faChurch, faBuilding, faHands, faFileLines, faHeart, faLocationPin, faAddressBook, faImages, faGift, faVolumeHigh, faVolumeXmark} from '@fortawesome/free-solid-svg-icons'
 import ReactImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css'
 import useLongPress from '../customHooks/useLongPress';
@@ -33,39 +33,56 @@ function Home() {
   const bgMusicRef = useRef();
 
   const [submittedUcapan, setSubmittedUcapan] = useState([]);
+  const [musicPlayStatus, setMusicPlayStatus] = useState(false);
+
+  const playOrPauseMusic = (isPlay) => {
+    if(isPlay === undefined){
+      bgMusicRef.current.play();
+      setMusicPlayStatus(true);
+    }else{
+      if(isPlay){
+        bgMusicRef.current.play()
+        setMusicPlayStatus(isPlay);
+      }else{
+        bgMusicRef.current.pause();
+        setMusicPlayStatus(isPlay);
+      }
+    }
+
+  };
 
   const scrollToGreetingDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     greetingRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToDetailDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     detailRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToPasanganDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     pasanganRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToLokasilDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     lokasiRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToReservationDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     reservationRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToGalleryDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     galleryRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
   const scrollToGiftDiv = () => {
-    bgMusicRef.current.play();
+    playOrPauseMusic();
     giftRef.current.scrollIntoView({behavior: 'smooth', block: 'start'}) 
   }
 
@@ -262,6 +279,50 @@ function Home() {
             <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop=''>
               <source src="/static/background_music.mp3" type="audio/mp3" />
             </audio>
+            <div>
+              {musicPlayStatus && (
+                <div 
+                  style={{
+                    backgroundColor: '#455dd5',
+                    fontSize:'25px',
+                    position: 'fixed',
+                    bottom: '25%',
+                    color: '#F9F9F9',
+                    padding: '10px',
+                    marginLeft: '10px',
+                    borderRadius: '100%',
+                    zIndex: 99
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    playOrPauseMusic(false)
+                  }} 
+                >
+                <FontAwesomeIcon icon={faVolumeHigh} />
+                </div>
+              )}
+              {!musicPlayStatus && (
+                <div 
+                  style={{
+                    backgroundColor: '#455dd5',
+                    fontSize:'25px',
+                    position: 'fixed',
+                    bottom: '25%',
+                    color: '#F9F9F9',
+                    padding: '10px',
+                    marginLeft: '10px',
+                    borderRadius: '100%',
+                    zIndex: 99
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    playOrPauseMusic(true)
+                  }} 
+                >
+                  <FontAwesomeIcon icon={faVolumeXmark} />
+                </div>
+              )}
+            </div>
             <div className={`${styles.bottomnav}`}  style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
                 <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGreetingDiv} />
                 <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToDetailDiv} />
