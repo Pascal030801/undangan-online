@@ -34,6 +34,8 @@ function Home() {
 
   const [submittedUcapan, setSubmittedUcapan] = useState([]);
   const [musicPlayStatus, setMusicPlayStatus] = useState(false);
+  const [index, setIndex] = useState(0);
+  const timeoutRef = useRef(null);
 
   const playOrPauseMusic = (isPlay) => {
     if(isPlay === undefined){
@@ -208,14 +210,34 @@ function Home() {
   const ayuBankLongPress = useLongPress(onAyuLongPress, onClick, defaultOptions);
   const yudaBankLongPress = useLongPress(onYudaLongPress, onClick, defaultOptions);
 
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  }
+
+  useEffect(() => {
+    resetTimeout();
+    timeoutRef.current = setTimeout(
+      () =>
+        setIndex((prevIndex) =>
+          prevIndex === submittedUcapan.length - 1 ? 0 : prevIndex + 1
+        ),
+      1000
+    );
+
+    return () => {
+      resetTimeout();
+    };
+  }, [index]);
 
   const slideImages = [
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1a%20resize.png',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1a.png',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
     {
       original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1b%20resize.png',
       thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1b.png',
@@ -228,48 +250,156 @@ function Home() {
       thumbnailHeight: '50px',
       thumbnailWidth: '50px'
     },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
     {
-      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/1a%20resize.png',
-      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F1a.png',
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F2a.jpg',
       thumbnailHeight: '50px',
       thumbnailWidth: '50px'
     },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
-    // {
-    //   original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
-    //   thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d.jpg',
-    //   thumbnailHeight: '50px',
-    //   thumbnailWidth: '50px'
-    // },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F2b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/2c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F2c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/3a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F3a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/4b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F4b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/5a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F5a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/5b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F5b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/5c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F5c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F6a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F6c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F7a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F7b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    }, 
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F8a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F8b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/8c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F8c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/9a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F9a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/9b%20reszie.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F9b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/10a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F10a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/10b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F10b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/10c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F10c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11a%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F11a.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11b%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F11b.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11c%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F11c.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/11d%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F11d.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
+    {
+      original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/DSC_8401%20resize.jpg',
+      thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2FDSC_8401.jpg',
+      thumbnailHeight: '50px',
+      thumbnailWidth: '50px'
+    },
   ];
   
 
@@ -492,61 +622,68 @@ function Home() {
                 </div>
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
-                <div style={{ flex: 6, backgroundColor: '#25316D', color: '#F9F9F9', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '51px'}}>
-                <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
+                <div style={{ maxHeight: '70%', backgroundColor: '#25316D', color: '#F9F9F9', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '25px'}}>
+                  <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
+                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
+                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
 
-                <form>
-                    <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                    <div style={{display: 'flex', flex: 1}}>
-                        <label htmlFor='namahadir'>Nama</label>
-                    </div>
-                    <div style={{display: 'flex', flex: 3}}>
-                        <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
-                        <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
-                    </div>
-                    </div>
-                    <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                    <div style={{display: 'flex', flex: 1}}>
-                        <label>Ucapan</label>
-                    </div>
-                    <div style={{display: 'flex', flex: 3}}>
-                        <label style={{marginRight: '11px'}}>:</label>
-                        <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
-                    </div>
-                    </div>
-                    <div className={styles.input}>
-                    <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
-                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
-                        <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
-                    </div>
-                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
-                        <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
-                    </div>
-                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                        <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
-                        <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
-                    </div>
-                    </div>
-                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
-                    <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
-                    </div>
-                </form>
-                
+                  <form>
+                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
+                      <div style={{display: 'flex', flex: 1}}>
+                          <label htmlFor='namahadir'>Nama</label>
+                      </div>
+                      <div style={{display: 'flex', flex: 3}}>
+                          <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
+                          <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
+                      </div>
+                      </div>
+                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
+                      <div style={{display: 'flex', flex: 1}}>
+                          <label>Ucapan</label>
+                      </div>
+                      <div style={{display: 'flex', flex: 3}}>
+                          <label style={{marginRight: '11px'}}>:</label>
+                          <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
+                      </div>
+                      </div>
+                      <div className={styles.input}>
+                      <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
+                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                          <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
+                          <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
+                      </div>
+                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                          <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
+                          <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
+                      </div>
+                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                          <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
+                          <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
+                      </div>
+                      </div>
+                      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
+                      <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
+                      </div>
+                  </form>
                 </div>
-                {/* <div style={{flex: 6, overflow: 'hidden'}}>
-                  {submittedUcapan.map((ucapan) => {
-                    return (
-                      <div key={ucapan.id} style={{display: 'flex', alignItems: 'flex-start', flexDirection: 'column'}}>
+
+                <div className={`${styles.slideshow}`}>
+                  <div
+                    className={`${styles.slideshowSlider}`}
+                    style={{ transform: `translate3d(0,${-index / submittedUcapan.length * 100}%, 0)` }}
+                  >
+                    {submittedUcapan.map((ucapan, index) => (
+                      <div
+                        key={index}
+                        className={`${styles.slide} ${styles.ucapan_card}`}
+                        style={{minHeight: `${index / submittedUcapan.length * 100}%`, marginBottom: '10px'}}
+                      >
                         <p>{ucapan.nama}</p>
                         <p>{ucapan.ucapan}</p>
                       </div>
-                    )
-                  })}
-                </div> */}
+                    ))}
+                  </div>
+                </div>
             </div>
             <div 
                 ref={galleryRef} 
