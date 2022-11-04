@@ -221,7 +221,7 @@ function Home() {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === submittedUcapan.length - 1 ? 0 : prevIndex + 1
+          prevIndex === submittedUcapan.length - 2 ? 0 : prevIndex + 1
         ),
       1000
     );
@@ -229,7 +229,7 @@ function Home() {
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [index, submittedUcapan.length]);
 
   const slideImages = [
     {
@@ -622,7 +622,7 @@ function Home() {
                 </div>
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
-                <div style={{ maxHeight: '70%', backgroundColor: '#25316D', color: '#F9F9F9', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '25px'}}>
+                <div className={`${styles.form_container}`}>
                   <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
                   <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
                   <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
@@ -670,16 +670,17 @@ function Home() {
                 <div className={`${styles.slideshow}`}>
                   <div
                     className={`${styles.slideshowSlider}`}
-                    style={{ transform: `translate3d(0,${-index / submittedUcapan.length * 100}%, 0)` }}
+                    style={{ transform: `translate3d(0, calc(-${index} * 6.5rem), 0)` }}
                   >
                     {submittedUcapan.map((ucapan, index) => (
                       <div
                         key={index}
                         className={`${styles.slide} ${styles.ucapan_card}`}
-                        style={{minHeight: `${index / submittedUcapan.length * 100}%`, marginBottom: '10px'}}
                       >
-                        <p>{ucapan.nama}</p>
-                        <p>{ucapan.ucapan}</p>
+                        <p className={`${styles.nama_pengucap}`}>{ucapan.nama}</p>
+                        <div className={`${styles.kalimat_ucapan}`}>
+                          <p>{ucapan.ucapan}</p>
+                        </div>
                       </div>
                     ))}
                   </div>

@@ -222,7 +222,7 @@ function UndanganWithNama(props) {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === submittedUcapan.length - 1 ? 0 : prevIndex + 1
+          prevIndex === submittedUcapan.length - 2 ? 0 : prevIndex + 1
         ),
       1000
     );
@@ -230,7 +230,7 @@ function UndanganWithNama(props) {
     return () => {
       resetTimeout();
     };
-  }, [index]);
+  }, [index, submittedUcapan.length]);
 
   const slideImages = [
     {
@@ -623,68 +623,69 @@ function UndanganWithNama(props) {
                 </div>
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
-                <div style={{ maxHeight: '70%', backgroundColor: '#25316D', color: '#F9F9F9', paddingLeft: '55px', paddingRight: '51px', paddingTop: '42px', paddingBottom: '25px'}}>
-                  <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
-                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
-                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
+              <div className={`${styles.form_container}`}>
+                <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
+                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
+                <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
 
-                  <form>
-                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                      <div style={{display: 'flex', flex: 1}}>
-                          <label htmlFor='namahadir'>Nama</label>
-                      </div>
-                      <div style={{display: 'flex', flex: 3}}>
-                          <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
-                          <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
-                      </div>
-                      </div>
-                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                      <div style={{display: 'flex', flex: 1}}>
-                          <label>Ucapan</label>
-                      </div>
-                      <div style={{display: 'flex', flex: 3}}>
-                          <label style={{marginRight: '11px'}}>:</label>
-                          <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
-                      </div>
-                      </div>
-                      <div className={styles.input}>
-                      <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
-                      </div>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
-                      </div>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
-                      </div>
-                      </div>
-                      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
-                      <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
-                      </div>
-                  </form>
-                </div>
+                <form>
+                    <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
+                    <div style={{display: 'flex', flex: 1}}>
+                        <label htmlFor='namahadir'>Nama</label>
+                    </div>
+                    <div style={{display: 'flex', flex: 3}}>
+                        <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
+                        <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
+                    </div>
+                    </div>
+                    <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
+                    <div style={{display: 'flex', flex: 1}}>
+                        <label>Ucapan</label>
+                    </div>
+                    <div style={{display: 'flex', flex: 3}}>
+                        <label style={{marginRight: '11px'}}>:</label>
+                        <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
+                    </div>
+                    </div>
+                    <div className={styles.input}>
+                    <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
+                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                        <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
+                        <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                        <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
+                        <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
+                        <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
+                        <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
+                    </div>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
+                    <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
+                    </div>
+                </form>
+              </div>
 
-                <div className={`${styles.slideshow}`}>
-                  <div
-                    className={`${styles.slideshowSlider}`}
-                    style={{ transform: `translate3d(0,${-index / submittedUcapan.length * 100}%, 0)` }}
-                  >
-                    {submittedUcapan.map((ucapan, index) => (
-                      <div
-                        key={index}
-                        className={`${styles.slide} ${styles.ucapan_card}`}
-                        style={{minHeight: `${index / submittedUcapan.length * 100}%`, marginBottom: '10px'}}
-                      >
-                        <p>{ucapan.nama}</p>
+              <div className={`${styles.slideshow}`}>
+                <div
+                  className={`${styles.slideshowSlider}`}
+                  style={{ transform: `translate3d(0, calc(-${index} * 6.5rem), 0)` }}
+                >
+                  {submittedUcapan.map((ucapan, index) => (
+                    <div
+                      key={index}
+                      className={`${styles.slide} ${styles.ucapan_card}`}
+                    >
+                      <p className={`${styles.nama_pengucap}`}>{ucapan.nama}</p>
+                      <div className={`${styles.kalimat_ucapan}`}>
                         <p>{ucapan.ucapan}</p>
                       </div>
-                    ))}
-                  </div>
+                    </div>
+                  ))}
                 </div>
+              </div>
             </div>
             <div 
                 ref={galleryRef} 
