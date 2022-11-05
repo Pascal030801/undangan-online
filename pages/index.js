@@ -406,7 +406,7 @@ function Home() {
   return (
     <>
         <div className={styles.undangan}>
-            <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop=''>
+            <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop='true'>
               <source src="/static/background_music.mp3" type="audio/mp3" />
             </audio>
             <div>
@@ -453,7 +453,7 @@ function Home() {
                 </div>
               )}
             </div>
-            <div className={`${styles.bottomnav}`}  style={{display: 'flex', flex: 1, alignItems: 'center', justifyContent: 'space-evenly'}}>
+            <div className={`${styles.bottomnav}`}>
                 <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGreetingDiv} />
                 <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToDetailDiv} />
                 <FontAwesomeIcon icon={faHeart} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToPasanganDiv} />
@@ -547,7 +547,7 @@ function Home() {
                 <div style={{alignItems: 'stretch', justifyContent: 'stretch', flex: 4, display: 'flex', flexDirection: 'column', alignContent: 'stretch', justifyItems: 'stretch',}}>
                   <div style={{flex: '1 1 auto', justifyContent:'center', display: 'flex'}}>
                     <Slide bottom cascade appear={true}>
-                      <img alt='img' loading='eager' style={{height: '100%', height: '100px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
+                      <img alt='img' loading='eager' className={`${styles.pasangan_image}`} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
                     </Slide>
                   </div>
                   <div style={{flex: 10, display: 'flex', flexDirection: 'column'}}>
@@ -571,7 +571,7 @@ function Home() {
                   <div style={{flex: 1}}>
                     <Slide bottom cascade>
                       <div>
-                          <img alt='img' loading='eager' style={{width: '100px'}} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
+                          <img alt='img' loading='eager' className={`${styles.pasangan_image}`} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
                       </div>
                     </Slide>
                   </div>
@@ -591,31 +591,33 @@ function Home() {
             </div>
             <div ref={lokasiRef} className={`${styles.container} ${styles.lokasi}`}>
                 <Fade top>
-                  <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#6E85B7'}}>Pemberkatan</p>
+                  <p className={`${styles.judul_lokasi}`}>Pemberkatan</p>
                 </Fade>
-                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                <div className={`${styles.lokasi_divider}`}></div>
                 <Slide bottom cascade>
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>09:00-Selesai</p>
-                  <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
-                  <FontAwesomeIcon icon={faChurch} style={{fontSize: '55px', marginBottom: '14px'}} />
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060',}}>Gereja Santo Pius X</p>
+                  <p className={`${styles.tanggal_dan_waktu_acara} ${styles.tanggal_acara}`}>Selasa, 22 November 2022</p>
+                  <p className={`${styles.tanggal_dan_waktu_acara}`}>09:00-Selesai</p>
+                  <div className={`${styles.icon_container}`} >
+                    <FontAwesomeIcon icon={faChurch} className={`${styles.undangan_icon}`} />
+                  </div>
+                  <p className={`${styles.nama_lokasi_undangan}`}>Gereja Santo Pius X</p>
                 </Slide>
-                <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060', marginBottom: '14px'}}>Bengkayang</p>
+                <p className={`${styles.nama_lokasi_undangan} ${styles.nama_lokasi_undangan_spacer}`}>Bengkayang</p>
                 <div className={`${styles.mainbutton}`} onClick={() => {openInNewTab('https://goo.gl/maps/vPCWqfYSJzg3E5GY8')}}>
                   Lihat Lokasi
                 </div>
                 <Fade top>
-                  <p style={{fontWeight: '700', fontFamily: 'Playfair Display', fontSize: '40px', textAlign: 'center', color: '#6E85B7'}}>Resepsi</p>
+                  <p className={`${styles.judul_lokasi}`}>Resepsi</p>
                 </Fade>
-                <div style={{minHeight: '3px', minWidth: '194px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
+                <div className={`${styles.lokasi_divider}`}></div>
                 <Slide bottom cascade>
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171', marginBottom: '14px'}}>Selasa, 22 November 2022</p>
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#717171'}}>12:00-19:00</p>
-                  <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
-                  <FontAwesomeIcon icon={faBuilding} style={{fontSize: '55px', marginBottom: '14px'}} />
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060'}}>Hotel Lala Golden</p>
-                  <p style={{fontWeight: '700', fontFamily: 'PT Serif', fontSize: '13px', textAlign: 'center', color: '#606060', marginBottom: '14px'}}>Bengkayang</p>
+                  <p className={`${styles.tanggal_dan_waktu_acara} ${styles.tanggal_acara}`}>Selasa, 22 November 2022</p>
+                  <p className={`${styles.tanggal_dan_waktu_acara}`}>12:00-19:00</p>
+                  <div className={`${styles.icon_container}`}>
+                    <FontAwesomeIcon icon={faBuilding} className={`${styles.undangan_icon}`} />
+                  </div>
+                  <p className={`${styles.nama_lokasi_undangan}`}>Hotel Lala Golden</p>
+                  <p className={`${styles.nama_lokasi_undangan} ${styles.nama_lokasi_undangan_spacer}`}>Bengkayang</p>
                 </Slide>
                 <div className={`${styles.mainbutton}`} onClick={() => {openInNewTab('https://goo.gl/maps/zo3ctXy9Rh1dnzUo6')}}>
                   Lihat Lokasi

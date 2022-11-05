@@ -17,6 +17,10 @@
   position: fixed;
   z-index: 2;
   top: calc(100vh - 60px);
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .greeting {
@@ -28,6 +32,19 @@
 .container {
   min-height: calc(100vh - 60px);
   max-height: calc(100vh - 60px);
+}
+
+.greeting .hiasan {
+  min-width: 27vw;
+  max-width: 27vw;
+  min-height: 53vh;
+  max-height: 53vh;
+  z-index: 3;
+  position: absolute;
+  background-color: #F7CB20;
+  border-radius: 57px;
+  top: calc(-1 *(53vh - (53vh * 90 / 100)));
+  left: calc(-1 *(27vw - (27vw * 52 / 100)));
 }
 
 .greeting .text_container {
@@ -200,6 +217,11 @@
   font-family: 'PT Serif';
 }
 
+.pasangan .pasangan_image {
+  height: 100%;
+  width: 100px;
+}
+
 .lokasi {
   display: flex;
   flex: 1;
@@ -224,6 +246,61 @@
   border-top-right-radius: 0;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.lokasi .judul_lokasi {
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  text-align: center;
+  color: #6E85B7
+}
+
+.lokasi .lokasi_divider {
+  min-height: 3px;
+  min-width: 194px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  background-color: #F6F4F4;
+}
+
+.lokasi .tanggal_acara {
+  margin-bottom: 14px;
+}
+
+.lokasi .tanggal_dan_waktu_acara {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: #717171;
+  margin-bottom: 14px;
+}
+
+.lokasi .icon_container {
+  min-height: 3px;
+  min-width: 143px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  background-color: #F6F4F4;
+}
+
+.lokasi .undangan_icon {
+  font-size: 55px;
+  margin-bottom: 14px;
+}
+
+.lokasi .nama_lokasi_undangan {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: #606060;
+}
+
+.lokasi .nama_lokasi_undangan_spacer {
+  margin-bottom: 14px;
 }
 
 .reservation {
@@ -450,6 +527,11 @@
       color: #F7CB20
     }
 
+    .pasangan .pasangan_image {
+      height: 100%;
+      width: 100px;
+    }
+
     .gift {
       padding: 30px 20px;
     }
@@ -556,12 +638,126 @@
 }
 
 @media screen and (min-width: 414px) and (max-width: 601px) {
+  .greeting .hiasan {
+    min-width: 27vw;
+    max-width: 27vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    border-radius: 57px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    left: calc(-1 *(27vw - (27vw * 52 / 100)));
+  }
+
+  .pasangan_image {
+    height: 100%;
+    width: 100px;
+  }
+
   @media screen and (max-height: 896px) {}
 
   @media screen and (min-height: 896px) {}
 }
 
 @media screen and (min-width: 601px) and (max-width: 1280px) {
+  .greeting .hiasan {
+    min-width: 24vw;
+    max-width: 24vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    /* border-radius: max(0px, min(69px, ((100% - 23vw + 1px) * 9999 / 69px))); */
+    border-radius: 69px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    /* left: calc(-1 *(27vw - (27vw * 43 / 100))); */
+  }
+
+  .greeting .announcement {
+    font-size: 21px;
+  }
+
+  .greeting .namapasangan {
+    font-size: 58px;
+  }
+
+  .greeting .tamuundangan {
+    margin-top: 110px;
+    font-size: 21px;
+  }
+
+  .pasangan {
+    gap: 40px;
+  }
+
+  .pasangan .pasangan_image {
+    height: 100%;
+    width: 150px;
+  }
+
+  .pasangan .namapasangan {
+    font-size: 30px;
+  }
+
+  .pasangan .detailpasangan {
+    font-size: 21px;
+  }
+
+  .lokasi .mainbutton {
+    width: 144px;
+    height: 45px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .lokasi .judul_lokasi {
+    font-size: 60px;
+  }
+
+  .lokasi .lokasi_divider {
+    min-height: 3px;
+    min-width: 291px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    background-color: #F6F4F4;
+  }
+
+  .lokasi .tanggal_acara {
+    margin-bottom: 21px;
+  }
+
+  .lokasi .tanggal_dan_waktu_acara {
+    font-size: 20px;
+    margin-bottom: 21px;
+  }
+
+  .lokasi .icon_container {
+    min-height: 3px;
+    min-width: 143px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: #F6F4F4;
+  }
+
+  .lokasi .undangan_icon {
+    font-size: 60px;
+    margin-bottom: 14px;
+  }
+
+  .lokasi .nama_lokasi_undangan {
+    font-size: 21px;
+  }
+
+  .lokasi .nama_lokasi_undangan_spacer {
+    margin-bottom: 21px;
+  }
+
   @media screen and (max-height: 800px) {}
 
   @media screen and (min-height: 800px) and (max-height: 962px) {}
@@ -592,4 +788,32 @@
 
   @media screen and (min-height: 900px) and (max-height: 1200px) {}
 
+}
+
+@media screen and (min-width: 1920px) {
+  .greeting .hiasan {
+    min-width: 8vw;
+    max-width: 8vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    border-radius: 100px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    left: calc(-1 *(8vw - (8vw * 52 / 100)));
+  }
+
+  .greeting .button_wrapper {
+    margin-bottom: 3%;
+  }
+
+  .bottomnav {
+    display: none;
+  }
+
+  .container {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
 }
