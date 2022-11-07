@@ -7,31 +7,44 @@
 */
 
 .undangan {
-  background-color: #F9F9F9;
+  --smooth-white: #F9F9F9;
+  --golder-color: #F7D039;
+  --dark-blue-color: #25316D;
+  --light-blue-color: #455dd5;
+  --black-color: #1A1919;
+  --gray-color: #717171;
+
+  --bottom-nav-bar-height: 60px;
+  background-color: var(--smooth-white);
 }
 
 .bottomnav {
   min-height: 60px;
   width: 100%;
-  background-color: #000000;
+  background-color: var(--black-color);
   position: fixed;
   z-index: 2;
-  top: calc(100vh - 60px);
+  top: calc(100vh - var(--bottom-nav-bar-height));
   display: flex;
   flex: 1;
   align-items: center;
   justify-content: space-evenly;
 }
 
-.greeting {
-  background-color: #25316D;
-  display: flex;
-  flex-direction: column;
+.bottomnav .navbar_icon {
+  font-size: 1.5rem;
+  color: var(--smooth-white);
 }
 
 .container {
-  min-height: calc(100vh - 60px);
-  max-height: calc(100vh - 60px);
+  min-height: calc(100vh - var(--bottom-nav-bar-height));
+  max-height: calc(100vh - var(--bottom-nav-bar-height));
+}
+
+.greeting {
+  background-color: var(--dark-blue-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .greeting .hiasan {
@@ -41,7 +54,7 @@
   max-height: 53vh;
   z-index: 3;
   position: absolute;
-  background-color: #F7CB20;
+  background-color: var(--golder-color);
   border-radius: 57px;
   top: calc(-1 *(53vh - (53vh * 90 / 100)));
   left: calc(-1 *(27vw - (27vw * 52 / 100)));
@@ -53,29 +66,27 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  /* padding: 30px 0; */
 }
 
 .greeting .announcement {
   font-family: 'Poppins';
-  color: #F6F4F4;
+  color: var(--smooth-white);
   font-weight: 700;
   font-size: 14px;
-  line-height: 21px;
   text-align: center;
 }
 
 .greeting .namapasangan {
-  /* font-family: 'Playfair Display', 'serif'; */
   font-family: 'Pacifico', 'serif';
   font-style: normal;
   font-weight: 500;
   font-size: 48px;
   text-align: center;
-  color: #F7D039;
+  color: var(--golder-color);
 }
 
-.greeting .namapasangan p {
+.greeting .namapasangan p,
+.greeting h3 {
   margin-block-start: 0px;
   margin-block-end: 0px;
 }
@@ -87,7 +98,7 @@
   font-size: 16px;
   line-height: 21px;
   text-align: center;
-  color: #F6F4F4;
+  color: var(--smooth-white);
 }
 
 .greeting .tamuundangan p {
@@ -123,15 +134,130 @@
   width: 320px;
   height: 50px;
 
-  background-color: #F9F9F9;
+  background-color: var(--smooth-white);
   border-radius: 15px;
 
   color: #25316D;
   font-family: 'PT Serif', 'serif';
 }
 
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .undangan {
+    --bottom-nav-bar-height: 10vh;
+  }
+
+  .bottomnav {
+    min-height: var(--bottom-nav-bar-height);
+    top: calc(100vh - var(--bottom-nav-bar-height));
+  }
+
+  .container {
+    min-height: calc(100vh - var(--bottom-nav-bar-height) + 1px);
+    max-height: calc(100vh - var(--bottom-nav-bar-height) + 1px);
+  }
+}
+
+@media screen and (min-width: 760px) and (max-width: 1280px) {
+  .undangan {
+    --bottom-nav-bar-height: 10vh;
+  }
+
+  .bottomnav {
+    min-height: var(--bottom-nav-bar-height);
+    top: calc(100vh - var(--bottom-nav-bar-height));
+  }
+
+  .bottomnav .navbar_icon {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    min-height: calc(100vh - var(--bottom-nav-bar-height) + 1px);
+    max-height: calc(100vh - var(--bottom-nav-bar-height) + 1px);
+  }
+
+  .greeting .text_container {
+    gap: 40px;
+  }
+
+  .greeting .hiasan {
+    min-width: 24vw;
+    max-width: 24vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    border-radius: calc((24vw / 53vh) * 2);
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    left: calc(-1 *(27vw - (27vw * 52 / 100)));
+  }
+
+  .greeting .announcement,
+  .greeting .tamuundangan {
+    font-size: 24px;
+  }
+
+  .greeting .namapasangan {
+    font-size: 56px;
+  }
+
+  .greeting .button_wrapper {
+    margin-bottom: 8%;
+  }
+
+
+}
+
+@media screen and (min-width: 1280px) {
+  .bottomnav {
+    min-height: 0;
+    display: none;
+  }
+
+
+  .greeting.container {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+
+  .greeting .hiasan {
+    min-width: 24vw;
+    max-width: 24vw;
+    min-height: 66vh;
+    max-height: 66vh;
+    border-radius: calc(24vw / 67vh);
+    top: calc(-1 *(53vh - (67vh * 65 / 100)));
+    left: calc(-1 *(27vw - (27vw * 35 / 100)));
+  }
+
+  .greeting .button_wrapper {
+    margin-bottom: 3%;
+  }
+
+  .greeting .announcement,
+  .greeting .tamuundangan {
+    font-size: 32px;
+  }
+
+  .greeting .tamuundangan {
+    margin-bottom: 20px;
+    line-height: 1em;
+  }
+
+  .greeting .namapasangan {
+    font-size: 52px;
+    /* line-height: 52px; */
+  }
+
+  .greeting .text_container {
+    gap: 40px;
+  }
+
+}
+
+
+
+
 .detail {
-  background-color: #F9F9F9;
+  background-color: var(--smooth-white);
   display: flex;
   flex-direction: column;
 }
@@ -177,6 +303,11 @@
   color: #717171;
 }
 
+.detail .detail_foto_pasangan {
+  width: 100vw;
+  flex: 3;
+}
+
 .detail .quote_alkitab_container .quote_alkitab {}
 
 .pasangan {
@@ -188,7 +319,7 @@
   padding-right: 39px;
   display: flex;
   flex-direction: column;
-  color: #F9F9F9;
+  color: var(--smooth-white);
 }
 
 .pasangan p {
@@ -200,7 +331,7 @@
 .pasangan .separator {
   min-width: 101px;
   min-height: 4px;
-  background-color: #F9F9F9;
+  background-color: var(--smooth-white);
 }
 
 .pasangan .namapasangan {
@@ -241,7 +372,7 @@
   height: 30px;
   font-size: 12px;
   background-color: #25316D;
-  color: #F9F9F9;
+  color: var(--smooth-white);
   border-top-left-radius: 5px;
   border-top-right-radius: 0;
   border-bottom-left-radius: 5px;
@@ -305,6 +436,13 @@
 
 .reservation {
   background-color: #25316D;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px,
 }
 
 .reservation p {
@@ -313,11 +451,15 @@
   text-align: center;
 }
 
+.reservation .form_container input[type=text] {
+  height: '29px';
+}
+
 .form_container {
   min-height: calc((100vh - 80px) * 6 / 10);
   max-height: calc((100vh - 80px) * 6 / 10);
   background-color: #25316D;
-  color: #F9F9F9;
+  color: var(--smooth-white);
   padding-left: 55px;
   padding-right: 51px;
   padding-top: 42px;
@@ -335,7 +477,7 @@
   min-height: calc((100vh - 80px) * 3.25 / 10);
   display: flex;
   flex-direction: column;
-  background-color: #F9F9F9;
+  background-color: var(--smooth-white);
   border-radius: 20px;
   padding: 20px 10px;
 }
@@ -377,7 +519,7 @@
   display: flex;
   align-items: flex-start;
   background-color: #6E85B7;
-  color: #F9F9F9;
+  color: var(--smooth-white);
   font-weight: 400;
   border-radius: 10px;
 }
@@ -411,7 +553,7 @@
   width: 250px;
   height: 1px;
   min-height: 140px;
-  border: 4px solid #F9F9F9;
+  border: 4px solid var(--smooth-white);
   border-radius: 15px;
   filter: drop-shadow(4px 4px 4px #6E85B7);
   padding: 15px;
@@ -440,7 +582,7 @@
   font-family: 'PT Serif';
   font-size: 20px;
   font-weight: 700;
-  color: #F9F9F9;
+  color: var(--smooth-white);
   text-align: left;
 }
 
@@ -448,7 +590,7 @@
   font-family: 'PT Serif';
   font-size: 12px;
   font-weight: 700;
-  color: #F9F9F9;
+  color: var(--smooth-white);
   text-align: left;
 }
 
@@ -460,360 +602,4 @@
   margin-block-start: 0px;
   margin-block-end: 0px;
   text-align: center;
-}
-
-@media screen and (max-width: 414px) {
-  @media screen and (max-height: 800px) {
-    .greeting .hiasan {
-      min-width: 27vw;
-      max-width: 27vw;
-      min-height: 53vh;
-      max-height: 53vh;
-      z-index: 3;
-      position: absolute;
-      background-color: #F7CB20;
-      border-radius: 57px;
-      top: calc(-1 *(53vh - (53vh * 90 / 100)));
-      left: calc(-1 *(27vw - (27vw * 52 / 100)));
-    }
-
-    .greeting .announcement {
-      font-size: 19px;
-      margin-top: 50px;
-      font-family: 'Gudea';
-    }
-
-    .greeting .text_container {
-      gap: 40px;
-      padding-bottom: 120px;
-    }
-
-    .greeting .button_container {
-      z-index: 4;
-      position: absolute;
-      display: flex;
-      min-width: 100vw;
-
-    }
-
-    .greeting .button_wrapper {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      margin-bottom: 15%;
-    }
-
-    .greeting .tamuundangan {
-      margin-top: 11%;
-      font-size: 14px;
-    }
-
-    .bottomnav {
-      min-height: 60px;
-      top: calc(100vh - 61px);
-    }
-
-    .container {
-      min-height: calc(100vh - 60px);
-      max-height: calc(100vh - 60px);
-    }
-
-    .pasangan .namapasangan {
-      font-size: 6.1vw;
-      margin-bottom: 14px;
-      font-family: 'Playfair Display', 'serif';
-      color: #F7CB20
-    }
-
-    .pasangan .pasangan_image {
-      height: 100%;
-      width: 100px;
-    }
-
-    .gift {
-      padding: 30px 20px;
-    }
-
-    .gift .bankcard {
-      background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
-      width: 240px;
-      height: 1px;
-      min-height: 120px;
-      border: 4px solid #F9F9F9;
-      border-radius: 15px;
-      filter: drop-shadow(4px 4px 4px #6E85B7);
-      padding: 15px;
-      padding-left: 13px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gift .title {
-      margin-bottom: 20px;
-    }
-
-    .gift .subtitle {
-      margin-bottom: 20px;
-    }
-
-
-    .gift .bankcard .norek {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .gift .bankcard .detailrek {
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .thankyou {
-      min-height: 90vh;
-    }
-  }
-
-  @media screen and (min-height: 800px) {
-    .greeting .hiasan {
-      min-width: 27vw;
-      max-width: 27vw;
-      min-height: 53vh;
-      max-height: 53vh;
-      position: absolute;
-      background-color: #F7CB20;
-      border-radius: 57px;
-      top: calc(-1 *(53vh - (53vh * 90 / 100)));
-      left: calc(-1 *(27vw - (27vw * 52 / 100)));
-    }
-
-    .greeting .announcement {
-      font-size: 20px;
-    }
-
-    .greeting .text_container {
-      gap: 40px;
-      padding-bottom: 120px;
-    }
-
-    .greeting .button_container {
-      z-index: 4;
-      position: absolute;
-      display: flex;
-      min-width: 100vw;
-
-    }
-
-    .greeting .button_wrapper {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      margin-bottom: 15%;
-    }
-
-    .greeting .tamuundangan {
-      margin-top: 110px;
-      font-size: 20px;
-    }
-
-    .bottomnav {
-      min-height: 80px;
-      top: calc(100vh - 81px);
-    }
-
-    .container {
-      min-height: calc(100vh - 80px);
-      max-height: calc(100vh - 80px);
-    }
-
-    .gift {
-      padding-top: 100px;
-      padding-bottom: 100px;
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-  }
-}
-
-@media screen and (min-width: 414px) and (max-width: 601px) {
-  .greeting .hiasan {
-    min-width: 27vw;
-    max-width: 27vw;
-    min-height: 53vh;
-    max-height: 53vh;
-    z-index: 3;
-    position: absolute;
-    background-color: #F7CB20;
-    border-radius: 57px;
-    top: calc(-1 *(53vh - (53vh * 90 / 100)));
-    left: calc(-1 *(27vw - (27vw * 52 / 100)));
-  }
-
-  .pasangan_image {
-    height: 100%;
-    width: 100px;
-  }
-
-  @media screen and (max-height: 896px) {}
-
-  @media screen and (min-height: 896px) {}
-}
-
-@media screen and (min-width: 601px) and (max-width: 1280px) {
-  .greeting .hiasan {
-    min-width: 24vw;
-    max-width: 24vw;
-    min-height: 53vh;
-    max-height: 53vh;
-    z-index: 3;
-    position: absolute;
-    background-color: #F7CB20;
-    /* border-radius: max(0px, min(69px, ((100% - 23vw + 1px) * 9999 / 69px))); */
-    border-radius: 69px;
-    top: calc(-1 *(53vh - (53vh * 90 / 100)));
-    /* left: calc(-1 *(27vw - (27vw * 43 / 100))); */
-  }
-
-  .greeting .announcement {
-    font-size: 21px;
-  }
-
-  .greeting .namapasangan {
-    font-size: 58px;
-  }
-
-  .greeting .tamuundangan {
-    margin-top: 110px;
-    font-size: 21px;
-  }
-
-  .pasangan {
-    gap: 40px;
-  }
-
-  .pasangan .pasangan_image {
-    height: 100%;
-    width: 150px;
-  }
-
-  .pasangan .namapasangan {
-    font-size: 30px;
-  }
-
-  .pasangan .detailpasangan {
-    font-size: 21px;
-  }
-
-  .lokasi .mainbutton {
-    width: 144px;
-    height: 45px;
-    font-size: 18px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  .lokasi .judul_lokasi {
-    font-size: 60px;
-  }
-
-  .lokasi .lokasi_divider {
-    min-height: 3px;
-    min-width: 291px;
-    margin-top: 21px;
-    margin-bottom: 21px;
-    background-color: #F6F4F4;
-  }
-
-  .lokasi .tanggal_acara {
-    margin-bottom: 21px;
-  }
-
-  .lokasi .tanggal_dan_waktu_acara {
-    font-size: 20px;
-    margin-bottom: 21px;
-  }
-
-  .lokasi .icon_container {
-    min-height: 3px;
-    min-width: 143px;
-    margin-top: 14px;
-    margin-bottom: 14px;
-    background-color: #F6F4F4;
-  }
-
-  .lokasi .undangan_icon {
-    font-size: 60px;
-    margin-bottom: 14px;
-  }
-
-  .lokasi .nama_lokasi_undangan {
-    font-size: 21px;
-  }
-
-  .lokasi .nama_lokasi_undangan_spacer {
-    margin-bottom: 21px;
-  }
-
-  @media screen and (max-height: 800px) {}
-
-  @media screen and (min-height: 800px) and (max-height: 962px) {}
-
-  @media screen and (min-height: 962px) and (max-height: 1080px) {}
-
-  @media screen and (min-height: 1080px) and (max-height: 1280px) {}
-
-  @media screen and (min-height: 1280px) and (max-height: 1366px) {}
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
-  @media screen and (max-height: 720px) {}
-
-  @media screen and (min-height: 720px) and (max-height: 1200px) {}
-
-}
-
-@media screen and (min-width: 1440px) and (max-width: 1536px) {
-  @media screen and (max-height: 900px) {}
-
-  @media screen and (min-height: 900px) and (max-height: 1200px) {}
-
-}
-
-@media screen and (min-width: 1536px) and (max-width: 1920px) {
-  @media screen and (max-height: 900px) {}
-
-  @media screen and (min-height: 900px) and (max-height: 1200px) {}
-
-}
-
-@media screen and (min-width: 1920px) {
-  .greeting .hiasan {
-    min-width: 8vw;
-    max-width: 8vw;
-    min-height: 53vh;
-    max-height: 53vh;
-    z-index: 3;
-    position: absolute;
-    background-color: #F7CB20;
-    border-radius: 100px;
-    top: calc(-1 *(53vh - (53vh * 90 / 100)));
-    left: calc(-1 *(8vw - (8vw * 52 / 100)));
-  }
-
-  .greeting .button_wrapper {
-    margin-bottom: 3%;
-  }
-
-  .bottomnav {
-    display: none;
-  }
-
-  .container {
-    min-height: 100vh;
-    max-height: 100vh;
-  }
 }

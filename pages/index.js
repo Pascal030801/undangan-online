@@ -237,7 +237,7 @@ function Home() {
   return (
     <>
         <div className={styles.undangan}>
-            <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop='true'>
+            <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop={true}>
               <source src="/static/background_music.mp3" type="audio/mp3" />
             </audio>
             <div>
@@ -285,13 +285,13 @@ function Home() {
               )}
             </div>
             <div className={`${styles.bottomnav}`}>
-                <FontAwesomeIcon icon={faHands} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGreetingDiv} />
-                <FontAwesomeIcon icon={faFileLines} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToDetailDiv} />
-                <FontAwesomeIcon icon={faHeart} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToPasanganDiv} />
-                <FontAwesomeIcon icon={faLocationPin} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToLokasilDiv} />
-                <FontAwesomeIcon icon={faAddressBook} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToReservationDiv} />
-                <FontAwesomeIcon icon={faImages} style={{fontSize: '25px', color: '#F9F9F9'}} onClick={scrollToGalleryDiv} />
-                <FontAwesomeIcon icon={faGift} style={{fontSize: '25px', color: '#F9F9F9'}}onClick={scrollToGiftDiv} />
+                <FontAwesomeIcon icon={faHands} className={`${styles.navbar_icon}`} onClick={scrollToGreetingDiv} />
+                <FontAwesomeIcon icon={faFileLines} className={`${styles.navbar_icon}`} onClick={scrollToDetailDiv} />
+                <FontAwesomeIcon icon={faHeart} className={`${styles.navbar_icon}`} onClick={scrollToPasanganDiv} />
+                <FontAwesomeIcon icon={faLocationPin} className={`${styles.navbar_icon}`} onClick={scrollToLokasilDiv} />
+                <FontAwesomeIcon icon={faAddressBook} className={`${styles.navbar_icon}`} onClick={scrollToReservationDiv} />
+                <FontAwesomeIcon icon={faImages} className={`${styles.navbar_icon}`} onClick={scrollToGalleryDiv} />
+                <FontAwesomeIcon icon={faGift} className={`${styles.navbar_icon}`} onClick={scrollToGiftDiv} />
             </div>
             <div ref={greetingRef} className={`${styles.container} ${styles.greeting}`}>
                 <div className={`${styles.hiasan}`}></div>
@@ -328,13 +328,12 @@ function Home() {
             
             <div ref={detailRef} className={`${styles.container} ${styles.detail}`}>
                 <div 
-                style={{
-                    width: '100vw', 
-                    flex: 3, 
-                    background: 'url("/static/image1.jpg") no-repeat',
-                    backgroundPosition: 'center', 
-                    backgroundSize: 'cover', 
-                }}
+                  className={`${styles.detail_foto_pasangan}`}
+                  style={{
+                      background: 'url("/static/image1.jpg") no-repeat',
+                      backgroundPosition: 'center',
+                      backgroundSize: 'cover'
+                  }}
                 >
                 </div>
                 <Fade>
@@ -344,12 +343,11 @@ function Home() {
                   </div>
                 </Fade>
                 <div 
+                  className={`${styles.detail_foto_pasangan}`}
                   style={{
-                      width: '100vw', 
-                      flex: 3, 
                       background: 'url("/static/1a.png") no-repeat',
-                      backgroundPosition: 'center', 
-                      backgroundSize: 'cover', 
+                      backgroundPosition: 'center',
+                      backgroundSize: 'cover'
                   }}
                 >
                 </div>
@@ -391,7 +389,7 @@ function Home() {
                     </Slide>
                   </div>
                 </div>
-                <div style={{display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <div className={`${styles.separator_container}`} style={{display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
                   <div className={styles.separator}></div>  
                   <Zoom>
                     <p style={{fontSize: '36px', marginLeft: '18px', marginRight: '18px', fontFamily: 'Cormorant Upright'}}>&</p>
@@ -454,7 +452,7 @@ function Home() {
                   Lihat Lokasi
                 </div>
             </div>
-            <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`} style={{display: 'flex', flexDirection: 'column', paddingBottom: '20px', paddingLeft: '10px', paddingRight: '10px', paddingTop: '20px', paddingBottom: '30px',}}>
+            <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`}>
                 <div className={`${styles.form_container}`}>
                   <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
                   <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
@@ -467,7 +465,7 @@ function Home() {
                       </div>
                       <div style={{display: 'flex', flex: 3}}>
                           <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
-                          <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', height: '29px'}} />
+                          <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', }} />
                       </div>
                       </div>
                       <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>

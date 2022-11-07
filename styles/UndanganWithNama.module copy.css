@@ -1,0 +1,943 @@
+/*
+ * bottom nav height in design 59px
+ * top bar height in design 64px
+ * padding horizontal 44px
+ * jarak dari top ke tulisan halaman greeting 155px, means 155-59 = 94px
+ * jarak dari tulisan ke bottom halaman greeting 189px, means 189 - 64 = 125px
+*/
+
+.undangan {
+  background-color: #F9F9F9;
+}
+
+.bottomnav {
+  min-height: 60px;
+  width: 100%;
+  background-color: #000000;
+  position: fixed;
+  z-index: 2;
+  top: calc(100vh - 60px);
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.greeting {
+  background-color: #25316D;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+}
+
+.greeting .hiasan {
+  min-width: 27vw;
+  max-width: 27vw;
+  min-height: 53vh;
+  max-height: 53vh;
+  z-index: 3;
+  position: absolute;
+  background-color: #F7CB20;
+  border-radius: 57px;
+  top: calc(-1 *(53vh - (53vh * 90 / 100)));
+  left: calc(-1 *(27vw - (27vw * 52 / 100)));
+}
+
+.greeting .text_container {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* padding: 30px 0; */
+}
+
+.greeting .announcement {
+  font-family: 'Poppins';
+  color: #F6F4F4;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.greeting .namapasangan {
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
+  color: #F7D039;
+}
+
+.greeting .namapasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.greeting .tamuundangan {
+  font-family: 'PT Serif', 'serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #F6F4F4;
+}
+
+.greeting .tamuundangan p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.greeting .button_container {
+  z-index: 4;
+  position: absolute;
+  display: flex;
+  min-width: 100vw;
+
+}
+
+.greeting .button_wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 15%;
+}
+
+.mainbutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+
+  width: 320px;
+  height: 50px;
+
+  background-color: #F9F9F9;
+  border-radius: 15px;
+
+  color: #25316D;
+  font-family: 'PT Serif', 'serif';
+}
+
+.detail {
+  background-color: #F9F9F9;
+  display: flex;
+  flex-direction: column;
+}
+
+.detail .namapasangan {
+  /* font-family: 'Playfair Display', 'serif'; */
+  font-family: 'Pacifico', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #F7D039;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .tanggal_pernikahan {
+  font-family: 'Playfair Display', 'serif';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #717171;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.detail .quote_alkitab_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.detail .quote_alkitab_container p {
+  font-family: 'PT Serif', 'serif';
+  text-align: center;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 16px;
+  color: #717171;
+}
+
+.detail .detail_foto_pasangan {
+  width: 100vw;
+  flex: 3;
+}
+
+.detail .quote_alkitab_container .quote_alkitab {}
+
+.pasangan {
+  background-color: #25316D;
+  border-radius: 90px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  padding-left: 39px;
+  padding-right: 39px;
+  display: flex;
+  flex-direction: column;
+  color: #F9F9F9;
+}
+
+.pasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.pasangan .separator {
+  min-width: 101px;
+  min-height: 4px;
+  background-color: #F9F9F9;
+}
+
+.pasangan .namapasangan {
+  font-size: 24px;
+  margin-bottom: 14px;
+  font-family: 'Playfair Display', 'serif';
+  color: #F7CB20
+}
+
+.pasangan .detailpasangan {
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'PT Serif';
+}
+
+.pasangan .pasangan_image {
+  height: 100%;
+  width: 100px;
+}
+
+.lokasi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokasi p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.lokasi .mainbutton {
+  width: 96px;
+  height: 30px;
+  font-size: 12px;
+  background-color: #25316D;
+  color: #F9F9F9;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lokasi .judul_lokasi {
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  text-align: center;
+  color: #6E85B7
+}
+
+.lokasi .lokasi_divider {
+  min-height: 3px;
+  min-width: 194px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  background-color: #F6F4F4;
+}
+
+.lokasi .tanggal_acara {
+  margin-bottom: 14px;
+}
+
+.lokasi .tanggal_dan_waktu_acara {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: #717171;
+  margin-bottom: 14px;
+}
+
+.lokasi .icon_container {
+  min-height: 3px;
+  min-width: 143px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  background-color: #F6F4F4;
+}
+
+.lokasi .undangan_icon {
+  font-size: 55px;
+  margin-bottom: 14px;
+}
+
+.lokasi .nama_lokasi_undangan {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: #606060;
+}
+
+.lokasi .nama_lokasi_undangan_spacer {
+  margin-bottom: 14px;
+}
+
+.reservation {
+  background-color: #25316D;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px,
+}
+
+.reservation p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.reservation .form_container input[type=text] {
+  height: '29px';
+}
+
+.form_container {
+  min-height: calc((100vh - 80px) * 6 / 10);
+  max-height: calc((100vh - 80px) * 6 / 10);
+  background-color: #25316D;
+  color: #F9F9F9;
+  padding-left: 55px;
+  padding-right: 51px;
+  padding-top: 42px;
+  padding-bottom: 25px;
+  overflow: hidden;
+}
+
+/* Slideshow */
+
+.slideshow {
+  margin-top: calc((100vh - 80px) * 0.25 / 10);
+  overflow: hidden;
+  min-width: 100%;
+  max-height: calc((100vh - 80px) * 3.25 / 10);
+  min-height: calc((100vh - 80px) * 3.25 / 10);
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F9F9;
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  min-width: 100%;
+  color: #343434;
+  font-weight: bold;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.ucapan_card {
+  min-height: 6rem;
+  max-height: 6rem;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.nama_pengucap {
+  width: 100%;
+  min-height: 16px;
+  text-align: left;
+}
+
+.kalimat_ucapan {
+  min-height: 3rem;
+  min-width: 100%;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  background-color: #6E85B7;
+  color: #F9F9F9;
+  font-weight: 400;
+  border-radius: 10px;
+}
+
+.gallery {}
+
+.gallery p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.gift p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift .bankcard {
+  background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
+  width: 250px;
+  height: 1px;
+  min-height: 140px;
+  border: 4px solid #F9F9F9;
+  border-radius: 15px;
+  filter: drop-shadow(4px 4px 4px #6E85B7);
+  padding: 15px;
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gift .title {
+  color: #F7CB20;
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  margin-bottom: 30px;
+}
+
+.gift .subtitle {
+  color: #717171;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'PT Serif';
+  margin-bottom: 30px;
+}
+
+.gift .bankcard .norek {
+  font-family: 'PT Serif';
+  font-size: 20px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.gift .bankcard .detailrek {
+  font-family: 'PT Serif';
+  font-size: 12px;
+  font-weight: 700;
+  color: #F9F9F9;
+  text-align: left;
+}
+
+.thankyou {
+  min-height: 75vh;
+}
+
+.thankyou p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+@media screen and (max-width: 414px) {
+  @media screen and (max-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      z-index: 3;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 19px;
+      margin-top: 50px;
+      font-family: 'Gudea';
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 11%;
+      font-size: 14px;
+    }
+
+    .bottomnav {
+      min-height: 60px;
+      top: calc(100vh - 61px);
+    }
+
+    .container {
+      min-height: calc(100vh - 60px);
+      max-height: calc(100vh - 60px);
+    }
+
+    .pasangan .namapasangan {
+      font-size: 6.1vw;
+      margin-bottom: 14px;
+      font-family: 'Playfair Display', 'serif';
+      color: #F7CB20
+    }
+
+    .pasangan .pasangan_image {
+      height: 100%;
+      width: 100px;
+    }
+
+    .gift {
+      padding: 30px 20px;
+    }
+
+    .gift .bankcard {
+      background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
+      width: 240px;
+      height: 1px;
+      min-height: 120px;
+      border: 4px solid #F9F9F9;
+      border-radius: 15px;
+      filter: drop-shadow(4px 4px 4px #6E85B7);
+      padding: 15px;
+      padding-left: 13px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gift .title {
+      margin-bottom: 20px;
+    }
+
+    .gift .subtitle {
+      margin-bottom: 20px;
+    }
+
+
+    .gift .bankcard .norek {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .gift .bankcard .detailrek {
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .thankyou {
+      min-height: 90vh;
+    }
+  }
+
+  @media screen and (min-height: 800px) {
+    .greeting .hiasan {
+      min-width: 27vw;
+      max-width: 27vw;
+      min-height: 53vh;
+      max-height: 53vh;
+      position: absolute;
+      background-color: #F7CB20;
+      border-radius: 57px;
+      top: calc(-1 *(53vh - (53vh * 90 / 100)));
+      left: calc(-1 *(27vw - (27vw * 52 / 100)));
+    }
+
+    .greeting .announcement {
+      font-size: 20px;
+    }
+
+    .greeting .text_container {
+      gap: 40px;
+      padding-bottom: 120px;
+    }
+
+    .greeting .button_container {
+      z-index: 4;
+      position: absolute;
+      display: flex;
+      min-width: 100vw;
+
+    }
+
+    .greeting .button_wrapper {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 15%;
+    }
+
+    .greeting .tamuundangan {
+      margin-top: 110px;
+      font-size: 20px;
+    }
+
+    .bottomnav {
+      min-height: 80px;
+      top: calc(100vh - 81px);
+    }
+
+    .container {
+      min-height: calc(100vh - 80px);
+      max-height: calc(100vh - 80px);
+    }
+
+    .gift {
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+}
+
+@media screen and (min-width: 414px) and (max-width: 601px) {
+  .greeting .hiasan {
+    min-width: 27vw;
+    max-width: 27vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    border-radius: 57px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    left: calc(-1 *(27vw - (27vw * 52 / 100)));
+  }
+
+  .pasangan_image {
+    height: 100%;
+    width: 100px;
+  }
+
+  @media screen and (max-height: 896px) {}
+
+  @media screen and (min-height: 896px) {}
+}
+
+@media screen and (min-width: 601px) and (max-width: 1280px) {
+  .greeting .hiasan {
+    min-width: 24vw;
+    max-width: 24vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    /* border-radius: max(0px, min(69px, ((100% - 23vw + 1px) * 9999 / 69px))); */
+    border-radius: 69px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    /* left: calc(-1 *(27vw - (27vw * 43 / 100))); */
+  }
+
+  .greeting .announcement {
+    font-size: 21px;
+  }
+
+  .greeting .namapasangan {
+    font-size: 58px;
+  }
+
+  .greeting .tamuundangan {
+    margin-top: 110px;
+    font-size: 21px;
+  }
+
+  .pasangan {
+    gap: 40px;
+  }
+
+  .pasangan .pasangan_image {
+    height: 100%;
+    width: 150px;
+  }
+
+  .pasangan .namapasangan {
+    font-size: 30px;
+  }
+
+  .pasangan .detailpasangan {
+    font-size: 21px;
+  }
+
+  .lokasi .mainbutton {
+    width: 144px;
+    height: 45px;
+    font-size: 18px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .lokasi .judul_lokasi {
+    font-size: 60px;
+  }
+
+  .lokasi .lokasi_divider {
+    min-height: 3px;
+    min-width: 291px;
+    margin-top: 21px;
+    margin-bottom: 21px;
+    background-color: #F6F4F4;
+  }
+
+  .lokasi .tanggal_acara {
+    margin-bottom: 21px;
+  }
+
+  .lokasi .tanggal_dan_waktu_acara {
+    font-size: 20px;
+    margin-bottom: 21px;
+  }
+
+  .lokasi .icon_container {
+    min-height: 3px;
+    min-width: 143px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: #F6F4F4;
+  }
+
+  .lokasi .undangan_icon {
+    font-size: 60px;
+    margin-bottom: 14px;
+  }
+
+  .lokasi .nama_lokasi_undangan {
+    font-size: 21px;
+  }
+
+  .lokasi .nama_lokasi_undangan_spacer {
+    margin-bottom: 21px;
+  }
+
+  @media screen and (max-height: 800px) {}
+
+  @media screen and (min-height: 800px) and (max-height: 962px) {}
+
+  @media screen and (min-height: 962px) and (max-height: 1080px) {}
+
+  @media screen and (min-height: 1080px) and (max-height: 1280px) {}
+
+  @media screen and (min-height: 1280px) and (max-height: 1366px) {}
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  @media screen and (max-height: 720px) {}
+
+  @media screen and (min-height: 720px) and (max-height: 1200px) {}
+
+}
+
+@media screen and (min-width: 1440px) and (max-width: 1536px) {
+  @media screen and (max-height: 900px) {}
+
+  @media screen and (min-height: 900px) and (max-height: 1200px) {}
+
+}
+
+@media screen and (min-width: 1536px) and (max-width: 1920px) {
+  @media screen and (max-height: 900px) {}
+
+  @media screen and (min-height: 900px) and (max-height: 1200px) {}
+
+}
+
+@media screen and (min-width: 1440px) and (max-width: 2560px) {
+  .greeting .hiasan {
+    min-width: 8vw;
+    max-width: 8vw;
+    min-height: 53vh;
+    max-height: 53vh;
+    z-index: 3;
+    position: absolute;
+    background-color: #F7CB20;
+    border-radius: 100px;
+    top: calc(-1 *(53vh - (53vh * 90 / 100)));
+    left: calc(-1 *(8vw - (8vw * 52 / 100)));
+  }
+
+  .greeting .button_wrapper {
+    margin-bottom: 3%;
+  }
+
+  .bottomnav {
+    display: none;
+  }
+
+  .greeting.container {
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+
+  .container {
+    max-height: 999999999999px;
+  }
+
+  .detail {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+  }
+
+  .detail .detail_foto_pasangan {
+    display: flex;
+    align-self: center;
+    max-width: 70vw;
+    min-height: 30vw;
+    height: auto;
+  }
+
+  .detail .namapasangan {
+    font-size: 40px;
+  }
+
+  .detail .tanggal_pernikahan {
+    font-size: 32px;
+  }
+
+  .detail .quote_alkitab_container p {
+    font-size: 28px;
+  }
+
+  .pasangan .pasangan_image {
+    width: 300px;
+  }
+
+  .pasangan .namapasangan {
+    font-size: 48px;
+  }
+
+  .pasangan .detailpasangan {
+    font-size: 24px;
+  }
+
+  .pasangan .separator_container {
+    font-size: 24px !important;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .reservation {
+    background-color: #25316D;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 50px;
+  }
+
+  .reservation .form_container {
+    display: flex;
+    flex: 6;
+    flex-direction: column;
+    width: 48vw;
+    min-width: 48vw;
+    height: 100%;
+    min-height: fit-content;
+    max-height: fit-content;
+  }
+
+  .reservation .form_container textarea {
+    height: 15rem;
+  }
+
+  .reservation .form_container input[type=text] {
+    height: 3rem;
+    height: '29px'
+  }
+
+  /* .reservation .slideshow {
+    display: flex;
+    flex: 6;
+  } */
+
+  .slideshow {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #F9F9F9;
+    border-radius: 20px;
+    padding: 20px 10px;
+    width: 48vw;
+    min-width: 48vw;
+  }
+
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+
+  .slide {
+    min-width: 100%;
+    color: #343434;
+    font-weight: bold;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+}
