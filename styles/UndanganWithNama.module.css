@@ -215,6 +215,95 @@
 
 .detail .quote_alkitab_container .quote_alkitab {}
 
+
+.pasangan {
+  background-color: var(--dark-blue-color);
+  border-radius: 90px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+  padding-left: 39px;
+  padding-right: 39px;
+  display: flex;
+  flex-direction: column;
+  color: var(--smooth-white);
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.pasangan .mempelai_container {
+  align-items: stretch;
+  justify-content: stretch;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  align-content: stretch;
+  justify-items: stretch;
+}
+
+.pasangan .mempelai_img {
+  display: flex;
+  flex: 1;
+  justify-content:center;
+  align-items: center;
+}
+
+.pasangan .pasangan_image {
+  width: 100px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 100%;
+}
+
+.pasangan p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.pasangan .separator_container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.pasangan .separator_text {
+  font-size: 36px;
+  margin-left: 18px;
+  margin-right: 18px;
+  font-family: 'Cormorant Upright';
+}
+
+.pasangan .separator {
+  min-width: 101px;
+  min-height: 4px;
+  background-color: var(--smooth-white);
+}
+
+.pasangan .info_mempelai {
+  flex: 10;
+  display: 'flex';
+  flex-direction: 'column';
+}
+.pasangan .nama_pasangan_container {
+  margin-bottom: 14px;
+}
+.pasangan .namapasangan {
+  font-size: 22px;
+  font-family: 'Playfair Display', 'serif';
+  color: var(--golder-color);
+}
+
+.pasangan .detailpasangan {
+  font-size: 14px;
+  font-weight: 550;
+  text-align: center;
+  font-family: 'PT Serif';
+}
+
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .undangan {
     --bottom-nav-bar-height: 10vh;
@@ -286,6 +375,32 @@
     width: 100vw;
     height: 30vh;
   }
+
+  .pasangan {
+    border-radius: 100px;
+    margin: 2vh 10vw;
+  }
+
+  .pasangan .pasangan_image {
+    width: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
+
+  .pasangan .namapasangan {
+    font-size: 36px;
+  }
+
+  .pasangan .detailpasangan {
+    font-size: 20px;
+  }
+
+  .pasangan .separator_text {
+    font-size: 54px;
+  }
+
+
 }
 
 @media screen and (min-width: 1280px) {
@@ -364,54 +479,30 @@
   .detail .quote_alkitab_container p {
     font-size: 24px;
   }
-}
 
+  .pasangan {
+    border-radius: 100px;
+    margin: 5vh 15vw;
+  }
 
+  .pasangan .pasangan_image {
+    width: 160px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 100%;
+  }
 
+  .pasangan .namapasangan {
+    font-size: 36px;
+  }
 
+  .pasangan .detailpasangan {
+    font-size: 20px;
+  }
 
-
-.pasangan {
-  background-color: #25316D;
-  border-radius: 90px;
-  padding-top: 84px;
-  padding-bottom: 84px;
-  padding-left: 39px;
-  padding-right: 39px;
-  display: flex;
-  flex-direction: column;
-  color: var(--smooth-white);
-}
-
-.pasangan p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.pasangan .separator {
-  min-width: 101px;
-  min-height: 4px;
-  background-color: var(--smooth-white);
-}
-
-.pasangan .namapasangan {
-  font-size: 24px;
-  margin-bottom: 14px;
-  font-family: 'Playfair Display', 'serif';
-  color: #F7CB20
-}
-
-.pasangan .detailpasangan {
-  font-size: 14px;
-  font-weight: 550;
-  text-align: center;
-  font-family: 'PT Serif';
-}
-
-.pasangan .pasangan_image {
-  height: 100%;
-  width: 100px;
+  .pasangan .separator_text {
+    font-size: 54px;
+  }
 }
 
 .lokasi {

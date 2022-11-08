@@ -349,57 +349,54 @@ function Home() {
             <div 
               ref={pasanganRef} 
               className={`${styles.container} ${styles.pasangan}`} 
-              style={{
-                display: 'flex', 
-                flex: 1, 
-                flexDirection: 'column', 
-                justifyContent: 'space-evenly'
-                
-              }}
             >
-                <div style={{alignItems: 'stretch', justifyContent: 'stretch', flex: 4, display: 'flex', flexDirection: 'column', alignContent: 'stretch', justifyItems: 'stretch',}}>
-                  <div style={{flex: '1 1 auto', justifyContent:'center', display: 'flex'}}>
+                <div className={`${styles.mempelai_container}`} >
+                  <div className={`${styles.mempelai_img}`}>
                     <Slide bottom cascade appear={true}>
                       <img alt='img' loading='eager' className={`${styles.pasangan_image}`} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Yuda.png'} />
                     </Slide>
                   </div>
-                  <div style={{flex: 10, display: 'flex', flexDirection: 'column'}}>
-                    <Slide bottom cascade >
-                      <p className={styles.namapasangan}>apt. Yuda Siswanto, S.Farm</p>
+                  <Slide bottom cascade >
+                    <div className={`${styles.info_mempelai}`}>
+                      <div className={`${styles.nama_pasangan_container}`}>
+                        <p className={styles.namapasangan}>apt. Yuda Siswanto, S.Farm</p>
+                      </div>
+
                       <p className={styles.detailpasangan}>Putra Pertama dari</p>
                       <p className={styles.detailpasangan}>Bapak Ali Siswanto (alm)</p>
                       <p className={styles.detailpasangan}>& Ibu Ir. Magdalena, MM</p>
                       <p className={styles.detailpasangan}>(Bengkayang)</p>
-                    </Slide>
-                  </div>
+                    </div>
+                  </Slide>
                 </div>
-                <div className={`${styles.separator_container}`} style={{display: 'flex', flexDirection: 'row', flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <div className={`${styles.separator_container}`}>
                   <div className={styles.separator}></div>  
                   <Zoom>
-                    <p style={{fontSize: '36px', marginLeft: '18px', marginRight: '18px', fontFamily: 'Cormorant Upright'}}>&</p>
+                    <p className={`${styles.separator_text}`}>&</p>
                   </Zoom>
                   <div className={styles.separator}></div>
                 </div>
-                <div style={{alignItems: 'center', justifyContent: 'center', flex: 4, display: 'flex', flexDirection: 'column'}}>
-                  <div style={{flex: 1}}>
+                <div className={`${styles.mempelai_container}`}>
+                  <div className={`${styles.mempelai_img}`}>
                     <Slide bottom cascade>
                       <div>
                           <img alt='img' loading='eager' className={`${styles.pasangan_image}`} src={'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Foto%20Ayu.png'} />
                       </div>
                     </Slide>
                   </div>
-                  <div style={{flex: 2, display: 'flex', flexDirection: 'column'}}>
-                    <Slide bottom cascade>
-                      <div className={styles.namapasangan}>
-                        <p>apt. Regina Ayudyaningsari</p>
-                        <p>Pradani, S.Farm</p>
+                  <Slide bottom cascade>
+                    <div className={`${styles.info_mempelai}`}>
+                      <div className={`${styles.nama_pasangan_container}`}>
+                        <p className={styles.namapasangan}>apt. Regina Ayudyaningsari</p>
+                        <p className={styles.namapasangan}>Pradani, S.Farm</p>
                       </div>
+                      
                       <p className={styles.detailpasangan}>Putri Pertama dari</p>
                       <p className={styles.detailpasangan}>Bapak Paulus Joko Prayitno, S.Pd, MM</p>
                       <p className={styles.detailpasangan}>& Ibu Retna Wikandani, S.Pd</p>
                       <p className={styles.detailpasangan}>(Bengkayang)</p>
-                    </Slide>
-                  </div>
+                    </div>
+                  </Slide>
                 </div>
             </div>
             <div ref={lokasiRef} className={`${styles.container} ${styles.lokasi}`}>
