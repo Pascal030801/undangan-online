@@ -327,30 +327,14 @@ function Home() {
             </div>
             
             <div ref={detailRef} className={`${styles.container} ${styles.detail}`}>
-                <div 
-                  className={`${styles.detail_foto_pasangan}`}
-                  style={{
-                      background: 'url("/static/image1.jpg") no-repeat',
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover'
-                  }}
-                >
-                </div>
+                <img src='/static/image1.jpg' className={`${styles.detail_foto_pasangan} ${styles.detail_foto_pasangan_1}`} />
                 <Fade>
-                  <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '20px', marginBottom: '20px'}}>
+                  <div className={`${styles.informasi_undangan}`}>
                     <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
                     <p className={`${styles.tanggal_pernikahan}`}>22 November 2022</p>
                   </div>
                 </Fade>
-                <div 
-                  className={`${styles.detail_foto_pasangan}`}
-                  style={{
-                      background: 'url("/static/1a.png") no-repeat',
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover'
-                  }}
-                >
-                </div>
+                <img src='/static/1a.jpg' className={`${styles.detail_foto_pasangan} ${styles.detail_foto_pasangan_2}`} />
                 <Fade>
                   <div className={`${styles.quote_alkitab_container}`}>
                     <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
