@@ -11,8 +11,10 @@
   --golder-color: #F7D039;
   --dark-blue-color: #25316D;
   --light-blue-color: #455dd5;
+  --gray-blue-color: #6E85B7;
   --black-color: #1A1919;
   --gray-color: #717171;
+  --dark-gray-color: #606060;
 
   --bottom-nav-bar-height: 60px;
   background-color: var(--smooth-white);
@@ -304,6 +306,177 @@
   font-family: 'PT Serif';
 }
 
+.lokasi {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lokasi p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.lokasi .mainbutton {
+  width: 96px;
+  height: 30px;
+  font-size: 12px;
+  background-color: var(--dark-blue-color);
+  color: var(--smooth-white);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lokasi .judul_lokasi {
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  font-size: 40px;
+  text-align: center;
+  color: var(--gray-blue-color);
+}
+
+.lokasi .lokasi_divider {
+  min-height: 3px;
+  min-width: 194px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  background-color: var(--smooth-white);
+}
+
+.lokasi .tanggal_acara {
+  margin-bottom: 14px;
+}
+
+.lokasi .tanggal_dan_waktu_acara {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: var(--gray-color);
+  margin-bottom: 14px;
+}
+
+.lokasi .icon_container {
+  min-height: 3px;
+  min-width: 143px;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  background-color: var(--smooth-white);
+}
+
+.lokasi .undangan_icon {
+  font-size: 55px;
+  margin-bottom: 14px;
+}
+
+.lokasi .nama_lokasi_undangan {
+  font-weight: 700;
+  font-family: 'PT Serif';
+  font-size: 13px;
+  text-align: center;
+  color: var(--dark-gray-color);
+}
+
+.lokasi .nama_lokasi_undangan_spacer {
+  margin-bottom: 14px;
+}
+
+.reservation {
+  background-color: var(--dark-blue-color);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 30px,
+}
+
+.reservation p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.reservation .form_container input[type=text] {
+  height: '29px';
+}
+
+.form_container {
+  min-height: calc((100vh - 80px) * 6 / 10);
+  max-height: calc((100vh - 80px) * 6 / 10);
+  background-color: #25316D;
+  color: var(--smooth-white);
+  padding-left: 55px;
+  padding-right: 51px;
+  padding-top: 42px;
+  padding-bottom: 25px;
+  overflow: hidden;
+}
+
+/* Slideshow */
+
+.slideshow {
+  margin-top: calc((100vh - 80px) * 0.25 / 10);
+  overflow: hidden;
+  min-width: 100%;
+  max-height: calc((100vh - 80px) * 3.25 / 10);
+  min-height: calc((100vh - 80px) * 3.25 / 10);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--smooth-white);
+  border-radius: 20px;
+  padding: 20px 10px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  min-width: 100%;
+  color: #343434;
+  font-weight: bold;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.ucapan_card {
+  min-height: 6rem;
+  max-height: 6rem;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.nama_pengucap {
+  width: 100%;
+  min-height: 16px;
+  text-align: left;
+}
+
+.kalimat_ucapan {
+  min-height: 3rem;
+  min-width: 100%;
+  padding: 10px 0 0 10px;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  background-color: #6E85B7;
+  color: var(--smooth-white);
+  font-weight: 400;
+  border-radius: 10px;
+}
+
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .undangan {
     --bottom-nav-bar-height: 10vh;
@@ -398,6 +571,59 @@
 
   .pasangan .separator_text {
     font-size: 54px;
+  }
+
+  .lokasi .mainbutton {
+    width: 192px;
+    height: 60px;
+    font-size: 18px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .lokasi .judul_lokasi {
+    font-size: 60px;
+  }
+  
+  .lokasi .lokasi_divider {
+    min-height: 3px;
+    min-width: 194px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    background-color: var(--smooth-white);
+  }
+  
+  .lokasi .tanggal_acara {
+    margin-bottom: 14px;
+  }
+  
+  .lokasi .tanggal_dan_waktu_acara {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  
+  .lokasi .icon_container {
+    min-height: 3px;
+    min-width: 143px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    background-color: var(--smooth-white);
+  }
+  
+  .lokasi .undangan_icon {
+    font-size: 70px;
+    margin-bottom: 14px;
+  }
+  
+  .lokasi .nama_lokasi_undangan {
+    font-size: 18px;
+  }
+  
+  .lokasi .nama_lokasi_undangan_spacer {
+    margin-bottom: 14px;
   }
 
 
@@ -505,176 +731,7 @@
   }
 }
 
-.lokasi {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.lokasi p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.lokasi .mainbutton {
-  width: 96px;
-  height: 30px;
-  font-size: 12px;
-  background-color: #25316D;
-  color: var(--smooth-white);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.lokasi .judul_lokasi {
-  font-weight: 700;
-  font-family: 'Playfair Display';
-  font-size: 40px;
-  text-align: center;
-  color: #6E85B7
-}
-
-.lokasi .lokasi_divider {
-  min-height: 3px;
-  min-width: 194px;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  background-color: #F6F4F4;
-}
-
-.lokasi .tanggal_acara {
-  margin-bottom: 14px;
-}
-
-.lokasi .tanggal_dan_waktu_acara {
-  font-weight: 700;
-  font-family: 'PT Serif';
-  font-size: 13px;
-  text-align: center;
-  color: #717171;
-  margin-bottom: 14px;
-}
-
-.lokasi .icon_container {
-  min-height: 3px;
-  min-width: 143px;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  text-align: center;
-  background-color: #F6F4F4;
-}
-
-.lokasi .undangan_icon {
-  font-size: 55px;
-  margin-bottom: 14px;
-}
-
-.lokasi .nama_lokasi_undangan {
-  font-weight: 700;
-  font-family: 'PT Serif';
-  font-size: 13px;
-  text-align: center;
-  color: #606060;
-}
-
-.lokasi .nama_lokasi_undangan_spacer {
-  margin-bottom: 14px;
-}
-
-.reservation {
-  background-color: #25316D;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px,
-}
-
-.reservation p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.reservation .form_container input[type=text] {
-  height: '29px';
-}
-
-.form_container {
-  min-height: calc((100vh - 80px) * 6 / 10);
-  max-height: calc((100vh - 80px) * 6 / 10);
-  background-color: #25316D;
-  color: var(--smooth-white);
-  padding-left: 55px;
-  padding-right: 51px;
-  padding-top: 42px;
-  padding-bottom: 25px;
-  overflow: hidden;
-}
-
-/* Slideshow */
-
-.slideshow {
-  margin-top: calc((100vh - 80px) * 0.25 / 10);
-  overflow: hidden;
-  min-width: 100%;
-  max-height: calc((100vh - 80px) * 3.25 / 10);
-  min-height: calc((100vh - 80px) * 3.25 / 10);
-  display: flex;
-  flex-direction: column;
-  background-color: var(--smooth-white);
-  border-radius: 20px;
-  padding: 20px 10px;
-}
-
-.slideshowSlider {
-  white-space: nowrap;
-  transition: ease 1000ms;
-}
-
-.slide {
-  min-width: 100%;
-  color: #343434;
-  font-weight: bold;
-  gap: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-
-.ucapan_card {
-  min-height: 6rem;
-  max-height: 6rem;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-
-.nama_pengucap {
-  width: 100%;
-  min-height: 16px;
-  text-align: left;
-}
-
-.kalimat_ucapan {
-  min-height: 3rem;
-  min-width: 100%;
-  padding: 10px 0 0 10px;
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
-  background-color: #6E85B7;
-  color: var(--smooth-white);
-  font-weight: 400;
-  border-radius: 10px;
-}
 
 .gallery {}
 
