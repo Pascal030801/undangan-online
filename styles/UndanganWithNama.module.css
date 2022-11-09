@@ -387,15 +387,20 @@
   margin-bottom: 14px;
 }
 
+.reservation .container {
+  min-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+  max-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+}
+
 .reservation {
   background-color: var(--dark-blue-color);
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 20px;
-  padding-bottom: 30px,
+  margin-top: 20px;
+  border-radius: 30px;
+  margin-bottom: 20px;
 }
 
 .reservation p {
@@ -404,35 +409,120 @@
   text-align: center;
 }
 
-.reservation .form_container input[type=text] {
-  height: '29px';
+.reservation .title {
+  font-family: 'Playfair Display';
+  font-size: 36px;
+  color: var(--golder-color);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.reservation .sub_title_container{
+  margin-bottom: 20px;
+}
+
+.reservation .sub_title {
+  font-family: 'PT Serif';
+  font-size: 11px;
+  color: var(--smooth-white);
+  font-weight: 575;
 }
 
 .form_container {
-  min-height: calc((100vh - 80px) * 6 / 10);
-  max-height: calc((100vh - 80px) * 6 / 10);
-  background-color: #25316D;
+  min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6.5 / 10);
+  max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6.5 / 10);
+  background-color: var(--dark-blue-color);
   color: var(--smooth-white);
   padding-left: 55px;
   padding-right: 51px;
-  padding-top: 42px;
+  margin-top: 16px;
   padding-bottom: 25px;
   overflow: hidden;
 }
 
+.reservation .form_container input[type=text] {
+  height: 29px;
+}
+
+.reservation .input {
+  display: flex;
+  flex: 1;
+  margin-bottom: 14px;
+}
+
+.reservation .input_row {
+  flex-direction: row;
+}
+
+.reservation .input_column {
+  flex-direction: column;
+}
+
+.form_container form {
+  min-width: 100%;
+}
+
+.form_container .input_label {
+  display: inline-block;
+  min-width: 25%;
+  margin-right: 5%;
+}
+
+.form_container .input_field {
+  display: inline-block;
+  min-width: 70%;
+}
+
+.form_container textarea.input_field  {
+  height: 3rem;
+}
+
+.form_container .konfirmasi_text {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.reservation .konfirmasi_radio_input {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  margin-bottom: 9px;
+}
+
+.reservation .konfirmasi_radio_input label {
+  margin-right: 2rem;
+}
+
+.reservation .konfirmasi_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reservation .konfirmasi_btn {
+  width: 121px;
+  height: 42px;
+  background-color: var(--black-color);
+  color: var(--smooth-white);
+  border-width: 0;
+}
+
+
 /* Slideshow */
 
 .slideshow {
-  margin-top: calc((100vh - 80px) * 0.25 / 10);
+  margin-top: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 0.4/ 10);
   overflow: hidden;
-  min-width: 100%;
-  max-height: calc((100vh - 80px) * 3.25 / 10);
-  min-height: calc((100vh - 80px) * 3.25 / 10);
+  max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 2.75 / 10);
+  min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 2.75 / 10);
   display: flex;
   flex-direction: column;
   background-color: var(--smooth-white);
-  border-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   padding: 20px 10px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .slideshowSlider {
@@ -458,7 +548,7 @@
   margin-bottom: 10px;
 }
 
-.nama_pengucap {
+.ucapan_card .nama_pengucap {
   width: 100%;
   min-height: 16px;
   text-align: left;
@@ -471,7 +561,7 @@
   text-align: left;
   display: flex;
   align-items: flex-start;
-  background-color: #6E85B7;
+  background-color: var(--gray-blue-color);
   color: var(--smooth-white);
   font-weight: 400;
   border-radius: 10px;
@@ -626,7 +716,156 @@
     margin-bottom: 14px;
   }
 
+  .reservation {
+    flex-direction: row;
+  }
 
+  .reservation .container {
+    min-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+    max-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+  }
+  
+  .reservation .title {
+    font-size: 44px;
+    margin-bottom: 6px;
+  }
+  
+  .reservation .sub_title {
+    font-size: 16px;
+  }
+  
+  .form_container {
+    min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    padding-left: 55px;
+    padding-right: 51px;
+    margin-top: 16px;
+    padding-bottom: 25px;
+    overflow: visible;
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+  }
+  
+  .reservation .form_container input[type=text] {
+    height: 2.5rem;
+  }
+  
+  .reservation .input {
+    display: flex;
+    flex: 1;
+    margin-bottom: 32px;
+  }
+  
+  .form_container form {
+    min-width: 100%;
+  }
+  
+  .form_container .input_label {
+    display: inline-block;
+    min-width: 25%;
+    margin-right: 5%;
+    font-size: 20px;
+  }
+  
+  .form_container .input_field {
+    display: inline-block;
+    min-width: 70%;
+  }
+  
+  .form_container textarea.input_field  {
+    height: 4rem;
+  }
+  
+  .form_container .konfirmasi_text {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .reservation .konfirmasi_radio_input {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: 9px;
+  }
+  
+  .reservation .konfirmasi_radio_input label {
+    margin-right: 2rem;
+    font-size: 16px;
+  }
+  
+  .reservation .konfirmasi_btn_container {
+    margin-top: 40px;
+  }
+  
+  .reservation .konfirmasi_btn {
+    width: 50%;
+    height: 46px;
+  }
+  
+  
+  /* Slideshow */
+  
+  .slideshow {
+    margin-top: 0;
+    max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50vw;
+    align-self: center;
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    min-width: 100%;
+    color: #343434;
+    font-weight: bold;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .ucapan_card {
+    min-height: 6rem;
+    max-height: 6rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .ucapan_card .nama_pengucap {
+    width: 100%;
+    min-height: 16px;
+    text-align: left;
+  }
+  
+  .kalimat_ucapan {
+    min-height: 3rem;
+    min-width: 100%;
+    padding: 10px 0 0 10px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--gray-blue-color);
+    color: var(--smooth-white);
+    font-weight: 400;
+    border-radius: 10px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -729,6 +968,160 @@
   .pasangan .separator_text {
     font-size: 54px;
   }
+
+  .reservation {
+    flex-direction: row;
+  }
+
+  .reservation .container {
+    min-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+    max-height: calc(100vh - var(--bottom-nav-bar-height) - 30px);
+  }
+  
+  .reservation .title {
+    font-size: 44px;
+    margin-bottom: 6px;
+  }
+  
+  .reservation .sub_title_container {
+    margin-bottom: 35px;
+  }
+
+  .reservation .sub_title {
+    font-size: 16px;
+  }
+  
+  .form_container {
+    min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    padding-left: 55px;
+    padding-right: 51px;
+    padding-bottom: 25px;
+    overflow: visible;
+    min-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+  }
+  
+  .reservation .form_container input[type=text] {
+    height: 2.5rem;
+  }
+  
+  .reservation .input {
+    display: flex;
+    flex: 1;
+    margin-bottom: 32px;
+  }
+  
+  .form_container form {
+    min-width: 100%;
+  }
+  
+  .form_container .input_label {
+    display: inline-block;
+    min-width: 18%;
+    margin-right: 2%;
+    font-size: 20px;
+  }
+  
+  .form_container .input_field {
+    display: inline-block;
+    min-width: 80%;
+  }
+  
+  .form_container textarea.input_field  {
+    height: 8rem;
+  }
+  
+  .form_container .konfirmasi_text {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 1rem;
+  }
+  
+  .reservation .konfirmasi_radio_input {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: 9px;
+  }
+  
+  .reservation .konfirmasi_radio_input label {
+    margin-left: 1rem;
+    font-size: 16px;
+  }
+  
+  .reservation .konfirmasi_btn_container {
+    margin-top: 40px;
+  }
+  
+  .reservation .konfirmasi_btn {
+    width: 50%;
+    height: 46px;
+  }
+  
+  
+  /* Slideshow */
+  
+  .slideshow {
+    margin-top: 0;
+    max-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    min-height: calc((100vh - var(--bottom-nav-bar-height) - 30px) * 6 / 10);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 50vw;
+    align-self: center;
+  }
+  
+  .slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+  }
+  
+  .slide {
+    min-width: 100%;
+    color: #343434;
+    font-weight: bold;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  
+  .ucapan_card {
+    min-height: 6rem;
+    max-height: 6rem;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .ucapan_card .nama_pengucap {
+    width: 100%;
+    min-height: 16px;
+    text-align: left;
+  }
+  
+  .kalimat_ucapan {
+    min-height: 3rem;
+    min-width: 100%;
+    padding: 10px 0 0 10px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--gray-blue-color);
+    color: var(--smooth-white);
+    font-weight: 400;
+    border-radius: 10px;
+  } 
 }
 
 

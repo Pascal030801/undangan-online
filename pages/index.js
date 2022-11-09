@@ -222,7 +222,7 @@ function Home() {
     timeoutRef.current = setTimeout(
       () =>
         setIndex((prevIndex) =>
-          prevIndex === submittedUcapan.length - 2 ? 0 : prevIndex + 1
+          prevIndex === submittedUcapan.length - 3 ? 0 : prevIndex + 1
         ),
       1000
     );
@@ -435,46 +435,38 @@ function Home() {
             </div>
             <div ref={reservationRef} className={`${styles.container} ${styles.reservation}`}>
                 <div className={`${styles.form_container}`}>
-                  <p style={{fontFamily: 'Playfair Display', fontSize: '36px', color: '#F7CB20', fontWeight: 700, marginBottom: '6px'}}>Reservasi</p>
-                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575}}>Konfirmasi Kehadiran</p>
-                  <p style={{fontFamily: 'PT Serif', fontSize: '11px', color: '#F9F9F9', fontWeight: 575, marginBottom: '52px'}}>Tamu Undangan</p>
+                  <p className={`${styles.title}`} style={{}}>Reservasi</p>
+                  <div className={`${styles.sub_title_container}`}>
+                    <p className={`${styles.sub_title}`} >Konfirmasi Kehadiran</p>
+                    <p className={`${styles.sub_title}`}>Tamu Undangan</p>
+                  </div>
 
                   <form>
-                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                      <div style={{display: 'flex', flex: 1}}>
-                          <label htmlFor='namahadir'>Nama</label>
+                      <div className={`${styles.input} ${styles.input_row}`}>
+                        <label htmlFor='namahadir' className={`${styles.input_label}`}>Nama</label>
+                        <input ref={inputNama} className={`${styles.input_field}`} type={'text'} id="namahadir" />
                       </div>
-                      <div style={{display: 'flex', flex: 3}}>
-                          <label htmlFor='namahadir' style={{marginRight: '11px'}}>:</label>
-                          <input ref={inputNama} type={'text'} id="namahadir" style={{width: '100%', }} />
+                      <div className={`${styles.input} ${styles.input_row}`}>
+                        <label className={`${styles.input_label}`}>Ucapan</label>
+                        <textarea ref={inputUcapan} className={`${styles.input_field}`} />
                       </div>
+                      <div className={`${styles.input} ${styles.input_column}`}>
+                        <p className={`${styles.konfirmasi_text}`} >Konfirmasi :</p>
+                        <div className={`${styles.konfirmasi_radio_input}`}>
+                            <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} />
+                            <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
+                        </div>
+                        <div className={`${styles.konfirmasi_radio_input}`}>
+                            <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} />
+                            <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
+                        </div>
+                        <div className={`${styles.konfirmasi_radio_input}`}>
+                            <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'} value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} />
+                            <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
+                        </div>
                       </div>
-                      <div className={styles.input} style={{display: 'flex', flex: 1, flexDirection: 'row', marginBottom: '24px'}}>
-                      <div style={{display: 'flex', flex: 1}}>
-                          <label>Ucapan</label>
-                      </div>
-                      <div style={{display: 'flex', flex: 3}}>
-                          <label style={{marginRight: '11px'}}>:</label>
-                          <textarea ref={inputUcapan} rows={3} style={{width: '100%'}}  />
-                      </div>
-                      </div>
-                      <div className={styles.input}>
-                      <p style={{textAlign: 'left', marginBottom: '24px'}}>Konfirmasi :</p>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputHadir} name='StatusKehadiran' type={'radio'} value={'Ya, Saya Hadir'} id={'Ya'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Ya'}>Ya, Saya Hadir</label>
-                      </div>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputRagu} name='StatusKehadiran' type={'radio'}  value={'Saya ragu-ragu'} id={'Ragu'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Ragu'}>Saya ragu-ragu</label>
-                      </div>
-                      <div style={{display: 'flex', flexDirection: 'row', marginBottom: '10px'}}>
-                          <input ref={inputTidakHadir} name='StatusKehadiran' type={'radio'}  value={'Maaf, Saya tidak bisa hadir'} id={'Tidak'} style={{marginRight: '16px'}} />
-                          <label htmlFor={'Tidak'}>Maaf, Saya tidak bisa hadir</label>
-                      </div>
-                      </div>
-                      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '42px'}}>
-                      <button type={'submit'} style={{width: '121px', height: '42px', backgroundColor: '#1A1919', color: '#F9F9F9', borderWidth: '0'}} onClick={onKonfirmasiSubmit}>Kirim</button>
+                      <div className={`${styles.konfirmasi_btn_container}`}>
+                        <button type={'submit'} className={`${styles.konfirmasi_btn}`} onClick={onKonfirmasiSubmit}>Kirim</button>
                       </div>
                   </form>
                 </div>
