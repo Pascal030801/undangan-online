@@ -681,7 +681,56 @@
   font-family: 'PT Serif';
   font-size: 16px;
   font-weight: 700;
-  color: #717171;
+  color: var(--gray-color);
+}
+
+.thankyou {
+  min-height: 75vh;
+}
+
+.thankyou .thankyou_image {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/static/thankyoubg.jpg') no-repeat;
+  min-height: 100vw;
+  min-width: 100vw;
+  background-position: center;
+  background-size: 100vw 100vw;
+  margin-bottom: 35px;
+  z-index: 1;
+  border-radius: 30px;
+  /* mask-image: url('/static/wave.svg');
+  mask-size: 100% 100%;
+  mask-clip: border-box; */
+}
+
+.thankyou .image_overlay {
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.4);
+  min-height: 100vw;
+  min-width: 100vw;
+  border-radius: 30px;
+}
+
+.thankyou p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.thankyou .thankyou_text {
+  color: var(--golder-color);
+  font-weight: 700;
+  font-size: 40px;
+  font-family: 'Playfair Display';
+  z-index: 1;
+  background-color: transparent;
+  padding-top: 40px;
+}
+
+.thankyou .quote {
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  color: var(--gray-color);
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
@@ -1023,6 +1072,122 @@
     width: 75px;
     height: 75px;
   }
+
+  .gift {
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .gift p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+  
+  .gift .bankcard {
+    background: linear-gradient(105.91deg, var(--gray-blue-color) 3.6%, var(--dark-blue-color) 97.01%), linear-gradient(105.91deg, var(--gray-blue-color) 3.6%, var(--dark-blue-color) 97.01%);
+    width: 350px;
+    height: 1px;
+    min-height: 180px;
+    border: 4px solid var(--smooth-white);
+    border-radius: 15px;
+    filter: drop-shadow(4px 4px 4px #6E85B7);
+    padding: 20px 28px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+  }
+  
+  .gift .title {
+    color: var(--golder-color);
+    font-size: 80px;
+    font-weight: 700;
+    font-family: 'Playfair Display';
+    margin-bottom: 15px;
+  }
+  
+  .gift .subtitle {
+    color: var(--gray-color);
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'PT Serif';
+    margin-bottom: 15px;
+  }
+  
+  .gift .bankcard .norek {
+    font-family: 'PT Serif';
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--smooth-white);
+    text-align: left;
+  }
+  
+  .gift .bankcard .detailrek {
+    font-family: 'PT Serif';
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--smooth-white);
+    text-align: left;
+  }
+  
+  .gift .title.text {
+    font-size: 36px;
+  }
+  
+  .gift .text {
+    font-family: 'PT Serif';
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-color);
+  }
+
+  .thankyou {
+    min-height: 100vh;
+  }
+  
+  .thankyou .thankyou_image {
+    background: url('/static/thankyoubg.jpg') no-repeat;
+    min-height: 80vw;
+    min-width: 80vw;
+    background-position: center;
+    background-size: 80vw 80vw;
+    margin-bottom: 35px;
+    z-index: 1;
+    border-radius: 30px;
+    /* mask-image: url('/static/wave.svg');
+    mask-size: 100% 100%;
+    mask-clip: border-box; */
+  }
+  
+  .thankyou .image_overlay {
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 80vw;
+    min-width: 80vw;
+    border-radius: 30px;
+  }
+  
+  .thankyou p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+
+  .thankyou .thankyou_text {
+    color: var(--golder-color);
+    font-weight: 700;
+    font-size: 60px;
+    font-family: 'Playfair Display';
+    z-index: 1;
+    background-color: transparent;
+    padding-top: 15vw;
+  }
+
+  .thankyou .quote {
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -1320,14 +1485,55 @@
     width: 75px;
     height: 75px;
   }
+
+  .thankyou {
+    min-height: 100vh;
+    padding-bottom: 80px;
+  }
+  
+  .thankyou .thankyou_image {
+    background: url('/static/thankyoubg.jpg') no-repeat;
+    min-height: 50vw;
+    min-width: 50vw;
+    background-position: center;
+    background-size: 50vw 50vw;
+    margin-bottom: 35px;
+    z-index: 1;
+    border-radius: 30px;
+    /* mask-image: url('/static/wave.svg');
+    mask-size: 100% 100%;
+    mask-clip: border-box; */
+  }
+  
+  .thankyou .image_overlay {
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 50vw;
+    max-height: 50vw;
+    min-width: 50vw;
+    max-width: 50vw;
+    margin: 0 25%;
+    border-radius: 30px;
+  }
+  
+  .thankyou p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+
+  .thankyou .thankyou_text {
+    color: var(--golder-color);
+    font-weight: 700;
+    font-size: 60px;
+    font-family: 'Playfair Display';
+    z-index: 1;
+    background-color: transparent;
+    padding-top: 13vw;
+  }
+
+  .thankyou .quote {
+    font-size: 42px;
+  }
 }
 
-.thankyou {
-  min-height: 75vh;
-}
-
-.thankyou p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}

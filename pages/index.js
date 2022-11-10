@@ -546,26 +546,17 @@ function Home() {
                 <p className={`${styles.text}`}>Jl.Trisula, Gang Aur No 18,</p>
                 <p className={`${styles.text}`}>Bukit Batu, Singkawang.</p>
             </div>
-            <div className={`${styles.thankyou}`} style={{ minHeight: '80vh'}}>
-                <div 
-                style={{
-                    background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("/static/thankyoubg.jpg") no-repeat', 
-                    minHeight: '100vw', 
-                    minWidth: '100vw', 
-                    backgroundPosition: 'center', 
-                    backgroundSize: '100vw 100vw', 
-                    marginBottom: '35px',
-                    zIndex: 1,
-                }}>
-                    <div style={{zIndex: 3,   background: 'rgba(0, 0, 0, 0.4)', minHeight: '100vw', minWidth: '100vw'}}>
-                      <p style={{color: '#F7D039', fontWeight: 700, fontSize: '40px', fontFamily: 'Playfair Display', zIndex: 1, backgroundColor: 'transparent', paddingTop: '40px'}}>Terima Kasih</p>
+            <div className={`${styles.thankyou}`}>
+                <div className={`${styles.thankyou_image}`}>
+                    <div className={`${styles.image_overlay}`}>
+                      <p className={`${styles.thankyou_text }`}>Terima Kasih</p>
                     </div>
                 </div>
-                <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 60px', flexDirection: 'column'}}>
-                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`“have a good and goldy marriage`}</p>
-                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`that shows the world Christ's love`}</p>
-                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`through how you sacrificially love and serve`}</p>
-                  <p style={{fontSize: '12px', fontWeight: 700, fontFamily: 'Playfair Display', color: '#717171', }}>{`one another.”`}</p>
+                <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 40px', flexDirection: 'column'}}>
+                  <p className={`${styles.quote}`}>{`“have a good and goldy marriage`}</p>
+                  <p className={`${styles.quote}`}>{`that shows the world Christ's love`}</p>
+                  <p className={`${styles.quote}`}>{`through how you sacrificially love and serve`}</p>
+                  <p className={`${styles.quote}`}>{`one another.”`}</p>
                 </div>
             </div>
             <ToastContainer />
