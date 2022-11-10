@@ -513,7 +513,8 @@ function Home() {
             </div>
             <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
                 <p className={`${styles.title}`}>Gift</p>
-                <p className={`${styles.subtitle}`}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda. Anda dapat memberi kado secara cashless.</p>
+                <p className={`${styles.subtitle}`}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda.</p>
+                <p className={`${styles.subtitle}`}>Anda dapat memberi kado secara cashless.</p>
                 <div className={styles.bankcard} {...ayuBankLongPress}>
                   <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
                       <img 
