@@ -567,6 +567,123 @@
   border-radius: 10px;
 }
 
+.gallery {
+  background-color: var(--dark-blue-color);
+  border-top: 90px;
+  padding-top: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-items: stretch;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+.gallery p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gallery .gallery_title {
+  font-family: 'Playfair Display';
+  font-weight: 500;
+  font-size: 48px;
+  color: var(--golder-color);
+  text-align: center;
+  margin-bottom: 18px;
+  flex: 0.5;
+}
+
+.slide_container {
+  flex: 11.5;
+}
+
+.gallery_image {
+  max-height: 60vh;
+}
+
+.gallery_thumbnail {
+  width: 50px;
+  height: 50px;
+  margin-top: 25px;
+}
+
+.gift {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.gift p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  text-align: center;
+}
+
+.gift .bankcard {
+  background: linear-gradient(105.91deg, var(--gray-blue-color) 3.6%, var(--dark-blue-color) 97.01%), linear-gradient(105.91deg, var(--gray-blue-color) 3.6%, var(--dark-blue-color) 97.01%);
+  width: 250px;
+  height: 1px;
+  min-height: 140px;
+  border: 4px solid var(--smooth-white);
+  border-radius: 15px;
+  filter: drop-shadow(4px 4px 4px #6E85B7);
+  padding: 15px;
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
+}
+
+.gift .title {
+  color: var(--golder-color);
+  font-size: 40px;
+  font-weight: 700;
+  font-family: 'Playfair Display';
+  margin-bottom: 15px;
+}
+
+.gift .subtitle {
+  color: var(--gray-color);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'PT Serif';
+  margin-bottom: 15px;
+}
+
+.gift .bankcard .norek {
+  font-family: 'PT Serif';
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--smooth-white);
+  text-align: left;
+}
+
+.gift .bankcard .detailrek {
+  font-family: 'PT Serif';
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--smooth-white);
+  text-align: left;
+}
+
+.gift .title.text {
+  font-size: 24px;
+}
+
+.gift .text {
+  font-family: 'PT Serif';
+  font-size: 16px;
+  font-weight: 700;
+  color: #717171;
+}
+
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .undangan {
     --bottom-nav-bar-height: 10vh;
@@ -866,6 +983,46 @@
     font-weight: 400;
     border-radius: 10px;
   }
+
+  .gallery {
+    background-color: var(--dark-blue-color);
+    border-top: 90px;
+    padding-top: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-items: stretch;
+    justify-content: space-between;
+    overflow: auto;
+  }
+  
+  .gallery p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+  
+  .gallery .gallery_title {
+    font-family: 'Playfair Display';
+    font-weight: 500;
+    font-size: 64px;
+    color: var(--golder-color);
+    text-align: center;
+    margin-bottom: 18px;
+    flex: 0.5;
+  }
+  
+  .slide_container {
+    flex: 11.5;
+  }
+  
+  .gallery_image {
+    max-height: 60vh;
+  }
+  
+  .gallery_thumbnail {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -1122,78 +1279,47 @@
     font-weight: 400;
     border-radius: 10px;
   } 
-}
 
-
-
-.gallery {}
-
-.gallery p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.gift {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-left: 80px;
-  padding-right: 80px;
-}
-
-.gift p {
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  text-align: center;
-}
-
-.gift .bankcard {
-  background: linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%), linear-gradient(105.91deg, #6E85B7 3.6%, #25316D 97.01%);
-  width: 250px;
-  height: 1px;
-  min-height: 140px;
-  border: 4px solid var(--smooth-white);
-  border-radius: 15px;
-  filter: drop-shadow(4px 4px 4px #6E85B7);
-  padding: 15px;
-  padding-left: 13px;
-  display: flex;
-  flex-direction: column;
-}
-
-.gift .title {
-  color: #F7CB20;
-  font-size: 40px;
-  font-weight: 700;
-  font-family: 'Playfair Display';
-  margin-bottom: 30px;
-}
-
-.gift .subtitle {
-  color: #717171;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: 'PT Serif';
-  margin-bottom: 30px;
-}
-
-.gift .bankcard .norek {
-  font-family: 'PT Serif';
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--smooth-white);
-  text-align: left;
-}
-
-.gift .bankcard .detailrek {
-  font-family: 'PT Serif';
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--smooth-white);
-  text-align: left;
+  .gallery {
+    background-color: var(--dark-blue-color);
+    border-top: 90px;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-items: stretch;
+    justify-content: space-between;
+    overflow: auto;
+  }
+  
+  .gallery p {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    text-align: center;
+  }
+  
+  .gallery .gallery_title {
+    font-family: 'Playfair Display';
+    font-weight: 500;
+    font-size: 64px;
+    color: var(--golder-color);
+    text-align: center;
+    margin-bottom: 18px;
+    flex: 0.5;
+  }
+  
+  .slide_container {
+    flex: 11.5;
+  }
+  
+  .gallery_image {
+    max-height: 80vh;
+  }
+  
+  .gallery_thumbnail {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .thankyou {

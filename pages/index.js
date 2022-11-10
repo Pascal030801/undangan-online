@@ -490,45 +490,31 @@ function Home() {
                   </div>
                 </div>
             </div>
-            <div 
-                ref={galleryRef} 
-                className={`${styles.container} ${styles.gallery}`} 
-                style={{
-                backgroundColor: '#25316D', 
-                borderTopLeftRadius: '90px', 
-                borderTopRightRadius: '90px', 
-                paddingTop: '50px',
-                display:'flex',
-                flexDirection: 'column',
-                justifyItems: 'stretch',
-                justifyContent: 'space-between',
-                overflow: 'auto'
-                }}
-            >
-                <p style={{fontFamily: 'Playfair Display', fontWeight: 500, fontSize: '48px', color: '#F9F9F9', textAlign: 'center', marginBottom: '18px', flex: 1}}>Galeri</p>
-                <div className="slide-container" style={{ flex: 11}}>
-                <ReactImageGallery 
-                    items={slideImages} 
-                    showThumbnails 
-                    thumbnailPosition='bottom' 
-                    lazyLoad 
-                    showFullscreenButton={false}
-                    showPlayButton={false}
-                    renderItem={(item) => {
-                    return (
-                        <img src={item.original} alt='image'style={{maxHeight: '60vh'}}/>
-                    )
-                    }}
-                    renderThumbInner={(item) => {
-                    return (<img src={item.thumbnail} alt='img' width={item.thumbnailWidth} height={item.thumbnailHeight} />);
-                    }}
-                />
+            <div ref={galleryRef} className={`${styles.container} ${styles.gallery}`}>
+                <p className={`${styles.gallery_title}`}>Galeri</p>
+                <div className={`${styles.slide_container}`}>
+                  <ReactImageGallery 
+                      items={slideImages} 
+                      showThumbnails 
+                      thumbnailPosition='bottom' 
+                      lazyLoad 
+                      showFullscreenButton={false}
+                      showPlayButton={false}
+                      renderItem={(item) => {
+                        return (
+                            <img src={item.original} alt='image' className={`${styles.gallery_image}`} />
+                        )
+                      }}
+                      renderThumbInner={(item) => {
+                        return (<img src={item.thumbnail} alt='img' className={`${styles.gallery_thumbnail}`} />);
+                      }}
+                  />
                 </div>
             </div>
             <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
                 <p className={`${styles.title}`}>Gift</p>
                 <p className={`${styles.subtitle}`}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda. Anda dapat memberi kado secara cashless.</p>
-                <div className={styles.bankcard} style={{marginBottom: '22px'}} {...ayuBankLongPress}>
+                <div className={styles.bankcard} {...ayuBankLongPress}>
                   <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
                       <img 
                       src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/logo-bri-600x600%201.png' 
@@ -541,7 +527,7 @@ function Home() {
                   <p className={`${styles.detailrek}`}>A/N</p>
                   <p className={`${styles.detailrek}`}>Regina Ayudyaningsari Pradani</p>
                 </div>
-                <div className={styles.bankcard} style={{marginBottom: '42px'}} {...yudaBankLongPress}>
+                <div className={styles.bankcard} {...yudaBankLongPress}>
                   <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
                       <img 
                       src='https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/Logo%20Bank%20BTN.png' 
@@ -555,11 +541,10 @@ function Home() {
                   <p className={`${styles.detailrek}`}>Yuda Siswanto</p>
                 </div>
 
-                <p style={{fontFamily: 'PT Serif', fontSize: '24px', fontWeight: 700, color: '#717171'}}>Kirim Hadiah</p>
-                <div style={{minHeight: '3px', minWidth: '143px', marginTop: '14px', marginBottom: '14px', backgroundColor: '#F6F4F4'}}></div>
-                <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Rumah Kami</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Jl.Trisula, Gang Aur No 18,</p>
-                <p style={{fontFamily: 'PT Serif', fontSize: '16px', fontWeight: 400, color: '#717171'}}>Bukit Batu, Singkawang.</p>
+                <p className={`${styles.title} ${styles.text}`}>Kirim Hadiah</p>
+                <p className={`${styles.text}`}>Rumah Kami</p>
+                <p className={`${styles.text}`}>Jl.Trisula, Gang Aur No 18,</p>
+                <p className={`${styles.text}`}>Bukit Batu, Singkawang.</p>
             </div>
             <div className={`${styles.thankyou}`} style={{ minHeight: '80vh'}}>
                 <div 
