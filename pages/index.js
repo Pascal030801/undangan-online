@@ -15,6 +15,7 @@ import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 import data from '../utils/data';
+import Head from 'next/head';
 
 function Home() {
   const greetingRef = useRef();
@@ -236,6 +237,14 @@ function Home() {
 
   return (
     <>
+        <Head key='undangan'>
+          <meta property="og:site_name" content="Undangan Pernikahan Yuda dan Ayuß" />
+          <meta property="og:title" content="Undangan Pernikahan Yuda dan Ayuß" />
+          <meta property="og:description" content={`Turut mengundang Bapak/Ibu ke pernikahan kami`} />
+          <meta property="og:image" itemprop="image" content="https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F4b.jpg" />
+          <meta property="og:type" content="website" />
+          <meta property="og:updated_time" content="1440432930" />
+        </Head>
         <div className={styles.undangan}>
             <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop={true}>
               <source src="/static/background_music.mp3" type="audio/mp3" />
@@ -340,7 +349,7 @@ function Home() {
                     <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
                     <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
                     <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
-                    <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan menyempurnakan."`}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`menyempurnakan."`}</p>
                     <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>
                   </div>
                 </Fade>
@@ -554,7 +563,7 @@ function Home() {
                     </div>
                 </div>
                 <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0 40px', flexDirection: 'column'}}>
-                  <p className={`${styles.quote}`}>{`“have a good and goldy marriage`}</p>
+                  <p className={`${styles.quote}`}>{`“Have a good and goldy marriage`}</p>
                   <p className={`${styles.quote}`}>{`that shows the world Christ's love`}</p>
                   <p className={`${styles.quote}`}>{`through how you sacrificially love and serve`}</p>
                   <p className={`${styles.quote}`}>{`one another.”`}</p>

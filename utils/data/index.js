@@ -115,12 +115,6 @@ const data = {
           thumbnailWidth: '50px'
         },
         {
-          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/9b%20reszie.jpg',
-          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F9b.jpg',
-          thumbnailHeight: '50px',
-          thumbnailWidth: '50px'
-        },
-        {
           original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/10a%20resize.jpg',
           thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F10a.jpg',
           thumbnailHeight: '50px',
