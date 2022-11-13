@@ -73,6 +73,12 @@ const data = {
           thumbnailWidth: '50px'
         },
         {
+          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/DSC_8401%20resize.jpg',
+          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2FDSC_8401.jpg',
+          thumbnailHeight: '50px',
+          thumbnailWidth: '50px'
+        },
+        {
           original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7b%20resize.jpg',
           thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F7b.jpg',
           thumbnailHeight: '50px',
@@ -138,12 +144,7 @@ const data = {
           thumbnailHeight: '50px',
           thumbnailWidth: '50px'
         },
-        {
-          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/DSC_8401%20resize.jpg',
-          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2FDSC_8401.jpg',
-          thumbnailHeight: '50px',
-          thumbnailWidth: '50px'
-        },
+        
     ]
 };
 
