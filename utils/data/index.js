@@ -49,12 +49,6 @@ const data = {
           thumbnailWidth: '50px'
         },
         {
-          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/5a%20resize.jpg',
-          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F5a.jpg',
-          thumbnailHeight: '50px',
-          thumbnailWidth: '50px'
-        },
-        {
           original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/5b%20resize.jpg',
           thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F5b.jpg',
           thumbnailHeight: '50px',
@@ -75,12 +69,6 @@ const data = {
         {
           original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/6c%20resize.jpg',
           thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F6c.jpg',
-          thumbnailHeight: '50px',
-          thumbnailWidth: '50px'
-        },
-        {
-          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/7a%20resize.jpg',
-          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F7a.jpg',
           thumbnailHeight: '50px',
           thumbnailWidth: '50px'
         },
@@ -111,12 +99,6 @@ const data = {
         {
           original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/9a%20resize.jpg',
           thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F9a.jpg',
-          thumbnailHeight: '50px',
-          thumbnailWidth: '50px'
-        },
-        {
-          original: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/10a%20resize.jpg',
-          thumbnail: 'https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F10a.jpg',
           thumbnailHeight: '50px',
           thumbnailWidth: '50px'
         },
