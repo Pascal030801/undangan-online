@@ -238,12 +238,13 @@ function Home() {
   return (
     <>
         <Head key='undangan'>
-          <meta property="og:site_name" content="Undangan Pernikahan Yuda dan Ayuß" />
-          <meta property="og:title" content="Undangan Pernikahan Yuda dan Ayuß" />
+          <meta property="og:site_name" content="Undangan Pernikahan Yuda dan Ayu" />
+          <meta property="og:title" content="Undangan Pernikahan Yuda dan Ayu" />
           <meta property="og:description" content={`Turut mengundang Bapak/Ibu ke pernikahan kami`} />
           <meta property="og:image" itemprop="image" content="https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F4b.jpg" />
           <meta property="og:type" content="website" />
           <meta property="og:updated_time" content="1440432930" />
+          <meta property="title" content="Undangan Pernikahan Yuda dan Ayu" />
         </Head>
         <div className={styles.undangan}>
             <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop={true}>

@@ -245,6 +245,7 @@ function UndanganWithNama(props) {
         <meta property="og:image" itemprop="image" content="https://sin1.contabostorage.com/de4425191d2e47d69db71db4a9e57219:undanganyudaayu/thumbnail%2F4b.jpg" />
         <meta property="og:type" content="website" />
         <meta property="og:updated_time" content="1440432930" />
+        <meta property="title" content="Undangan Pernikahan Yuda dan Ayu" />
       </Head>
         <div className={styles.undangan}>
             <audio ref={bgMusicRef} src="/static/background_music.mp3" autoPlay={true} loop={true}>
