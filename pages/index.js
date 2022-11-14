@@ -337,7 +337,7 @@ function Home() {
             </div>
             
             <div ref={detailRef} className={`${styles.container} ${styles.detail}`}>
-                <img src='/static/image1.jpg' className={`${styles.detail_foto_pasangan} ${styles.detail_foto_pasangan_1}`} />
+                <img src='/static/detail_img1.jpeg' className={`${styles.detail_foto_pasangan} ${styles.detail_foto_pasangan_1}`} />
                 <Fade>
                   <div className={`${styles.informasi_undangan}`}>
                     <p className={`${styles.namapasangan}`}>Yuda & Ayu</p>
@@ -523,8 +523,10 @@ function Home() {
             </div>
             <div ref={giftRef} className={`${styles.container} ${styles.gift}`}>
                 <p className={`${styles.title}`}>Gift</p>
-                <p className={`${styles.subtitle}`}>Kado anda berarti bagi kami. jika memberi adalah  ungkapan tanda kasih anda.</p>
-                <p className={`${styles.subtitle}`}>Anda dapat memberi kado secara cashless.</p>
+                <p className={`${styles.subtitle}`}>Kehadiran Bapak/Ibu/Saudara(i) sekalian adalah kebahagiaan</p>
+                <p className={`${styles.subtitle}`}>yang tak ternilai bagi kami dan keluarga, namun jika</p>
+                <p className={`${styles.subtitle}`}>memberi merupakan tanda kasih, semoga hal tersebut</p>
+                <p className={`${styles.subtitle}`}>menjadi pelengkap kebahagiaan kami</p>
                 <div className={styles.bankcard} {...ayuBankLongPress}>
                   <div style={{display: 'flex', flex: 1, justifyContent: 'flex-end'}}>
                       <img 
