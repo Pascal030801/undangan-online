@@ -485,7 +485,7 @@ function UndanganWithNama(props) {
                 <div className={`${styles.slideshow}`}>
                   <div
                     className={`${styles.slideshowSlider}`}
-                    style={{ transform: `translate3d(0, calc(-${index} * 6.5rem), 0)` }}
+                    style={{ transform: `translate3d(0, calc(-${index} * 10.5rem), 0)` }}
                   >
                     {submittedUcapan.map((ucapan, index) => (
                       <div
@@ -818,6 +818,31 @@ export async function getStaticPaths() {
             {params: {namaundangan: 'apt.+Muhamad+Nur+Khairudin,+S.Farm+dan+Partner'}},
             {params: {namaundangan: 'Yulenta+Dora+dan+Partner'}},
             {params: {namaundangan: 'dr.+Argunmas+dan+Partner'}},
+            {params: {namaundangan: 'Antonius+Suhardi+dan+Partner'}},
+            {params: {namaundangan: 'Agnes+Siwi+dan+Partner'}},
+            {params: {namaundangan: 'St.+Gerald+Ethelie+dan+Partner'}},
+            {params: {namaundangan: 'Agatha+Astri+dan+Partner'}},
+            {params: {namaundangan: 'Helen+Cynthia+dan+Partner'}},
+            {params: {namaundangan: 'Pipit+Puspitasari+dan+Partner'}},
+            {params: {namaundangan: 'Humas+Titrasi'}},
+            {params: {namaundangan: 'Kornelius+Tony,+S.Pd.,+M.Si+dan+Partner'}},
+            {params: {namaundangan: 'Ulfa+Tunisak+dan+Partner'}},
+            {params: {namaundangan: 'Devi+Oktavitalis+dan+Partner'}},
+            {params: {namaundangan: 'PB.+Pemda'}},
+            {params: {namaundangan: 'PB.+Satria'}},
+            {params: {namaundangan: 'Deus+dan+Partner'}},
+            {params: {namaundangan: 'Dicky+Candra+Prawira+dan+Partner'}},
+            {params: {namaundangan: 'Samsul+Bahri+dan+Partner'}},
+            {params: {namaundangan: 'Herfi+Agoesta+dan+Partner'}},
+            {params: {namaundangan: 'Jonatan+dan+Partner'}},
+            {params: {namaundangan: 'Lukas+dan+Partner'}},
+            {params: {namaundangan: 'Heldy+dan+Partner'}},
+            {params: {namaundangan: 'Stanley+Fernando+dan+Partner'}},
+            {params: {namaundangan: 'Mario+Fernando+Tanalepy+dan+Partner'}},
+            {params: {namaundangan: 'Erico+Mario+Sandi+dan+Partner'}},
+            {params: {namaundangan: 'Providentius+Regodian+dan+Partner'}},
+            {params: {namaundangan: 'Agung+Triatmojo+dan+Partner'}},
+  
         ],
         fallback: true,
     }
