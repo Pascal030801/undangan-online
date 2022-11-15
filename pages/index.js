@@ -109,12 +109,34 @@ function Home() {
     getReservasiData();
   }, [])
 
+  // useEffect(() => {
+  //   if(inputUcapan.current.value.length > 100){
+  //     inputUcapan.current.value = inputUcapan.current.value.substring(0, 100)
+  //   }
+  // }, [inputUcapan.current.value])
+
   const onKonfirmasiSubmit = async (e) => {
     try {
       e.preventDefault();
 
       let statusKehadiran;
-  
+      
+      if(inputNama.current.value === '' || inputUcapan.current.value === '') {
+        toast('Nama atau Ucapan tidak boleh kosong', {
+          position: "bottom-center",
+          autoClose: 150,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+          closeButton: false,
+          type: 'error'
+        });
+        return;
+      }
+      
       if(inputHadir.current.checked){
         statusKehadiran = inputHadir.current.value;
       }else if(inputRagu.current.checked){
@@ -454,11 +476,20 @@ function Home() {
                   <form>
                       <div className={`${styles.input} ${styles.input_row}`}>
                         <label htmlFor='namahadir' className={`${styles.input_label}`}>Nama</label>
-                        <input ref={inputNama} className={`${styles.input_field}`} type={'text'} id="namahadir" />
+                        <input ref={inputNama} placeholder='nama' className={`${styles.input_field}`} type={'text'} id="namahadir" />
                       </div>
                       <div className={`${styles.input} ${styles.input_row}`}>
                         <label className={`${styles.input_label}`}>Ucapan</label>
-                        <textarea ref={inputUcapan} className={`${styles.input_field}`} />
+                        <textarea 
+                          ref={inputUcapan} 
+                          placeholder='maksimal 100 karakter' 
+                          onChange={(e) => {
+                            if(e.target.value.length > 100){
+                              console.log('lebih')
+                              inputUcapan.current.value = e.target.value.substring(0,100)
+                            }
+                          }} 
+                          className={`${styles.input_field}`} />
                       </div>
                       <div className={`${styles.input} ${styles.input_column}`}>
                         <p className={`${styles.konfirmasi_text}`} >Konfirmasi :</p>
@@ -484,7 +515,7 @@ function Home() {
                 <div className={`${styles.slideshow}`}>
                   <div
                     className={`${styles.slideshowSlider}`}
-                    style={{ transform: `translate3d(0, calc(-${index} * 6.5rem), 0)` }}
+                    style={{ transform: `translate3d(0, calc(-${index} * 9.625rem), 0)` }}
                   >
                     {submittedUcapan.map((ucapan, index) => (
                       <div
@@ -493,7 +524,7 @@ function Home() {
                       >
                         <p className={`${styles.nama_pengucap}`}>{ucapan.nama}</p>
                         <div className={`${styles.kalimat_ucapan}`}>
-                          <p>{ucapan.ucapan}</p>
+                          <p>{ucapan.ucapan.substring(0, 100)}</p>
                         </div>
                       </div>
                     ))}

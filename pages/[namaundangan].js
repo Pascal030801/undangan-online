@@ -116,6 +116,22 @@ function UndanganWithNama(props) {
 
       let statusKehadiran;
   
+      if(inputNama.current.value === '' || inputUcapan.current.value === '') {
+        toast('Nama atau Ucapan tidak boleh kosong', {
+          position: "bottom-center",
+          autoClose: 150,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false,
+          progress: undefined,
+          theme: "light",
+          closeButton: false,
+          type: 'error'
+        });
+        return;
+      }
+      
       if(inputHadir.current.checked){
         statusKehadiran = inputHadir.current.value;
       }else if(inputRagu.current.checked){
@@ -455,11 +471,21 @@ function UndanganWithNama(props) {
                   <form>
                       <div className={`${styles.input} ${styles.input_row}`}>
                         <label htmlFor='namahadir' className={`${styles.input_label}`}>Nama</label>
-                        <input ref={inputNama} className={`${styles.input_field}`} type={'text'} id="namahadir" />
+                        <input ref={inputNama} className={`${styles.input_field}`} placeholder='nama' type={'text'} id="namahadir" />
                       </div>
                       <div className={`${styles.input} ${styles.input_row}`}>
                         <label className={`${styles.input_label}`}>Ucapan</label>
-                        <textarea ref={inputUcapan} className={`${styles.input_field}`} />
+                        <textarea 
+                          ref={inputUcapan} 
+                          className={`${styles.input_field}`}
+                          placeholder='maksimal 100 karakter' 
+                          onChange={(e) => {
+                            if(e.target.value.length > 100){
+                              console.log('lebih')
+                              inputUcapan.current.value = e.target.value.substring(0,100)
+                            }
+                          }}
+                        />
                       </div>
                       <div className={`${styles.input} ${styles.input_column}`}>
                         <p className={`${styles.konfirmasi_text}`} >Konfirmasi :</p>

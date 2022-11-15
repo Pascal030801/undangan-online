@@ -490,7 +490,7 @@
 }
 
 .reservation .konfirmasi_radio_input label {
-  margin-right: 2rem;
+  margin-right: 0;
 }
 
 .reservation .konfirmasi_btn_container {
@@ -542,22 +542,25 @@
 }
 
 .ucapan_card {
-  min-height: 6rem;
-  max-height: 6rem;
+  min-height: 9rem;
+  max-height: 9rem;
   overflow: hidden;
   margin-bottom: 10px;
 }
 
 .ucapan_card .nama_pengucap {
   width: 100%;
-  min-height: 16px;
+  min-height: 1rem;
+  max-height: 1rem;
   text-align: left;
 }
 
 .kalimat_ucapan {
-  min-height: 3rem;
+  min-height: 8rem;
+  max-height: 8rem;
   min-width: 100%;
-  padding: 10px 0 0 10px;
+  max-width: 100%;
+  padding: 10px 10px 0 10px;
   text-align: left;
   display: flex;
   align-items: flex-start;
@@ -565,6 +568,12 @@
   color: var(--smooth-white);
   font-weight: 400;
   border-radius: 10px;
+  white-space: normal;
+}
+
+.kalimat_ucapan p {
+  text-align: left;
+  font-size: 1rem;
 }
 
 .gallery {
@@ -1025,7 +1034,7 @@
   }
   
   .kalimat_ucapan {
-    min-height: 3rem;
+    min-height: 5rem;
     min-width: 100%;
     padding: 10px 0 0 10px;
     text-align: left;
