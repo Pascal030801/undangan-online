@@ -242,7 +242,7 @@ function UndanganWithNama(props) {
         setIndex((prevIndex) =>
           prevIndex === submittedUcapan.length - 2 ? 0 : prevIndex + 1
         ),
-      1000
+      2500
     );
 
     return () => {

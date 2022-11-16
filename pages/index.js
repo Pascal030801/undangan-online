@@ -247,7 +247,7 @@ function Home() {
         setIndex((prevIndex) =>
           prevIndex === submittedUcapan.length - 3 ? 0 : prevIndex + 1
         ),
-      1000
+      2500
     );
 
     return () => {
