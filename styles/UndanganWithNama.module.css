@@ -698,7 +698,9 @@
 }
 
 .thankyou {
-  min-height: 75vh;
+  margin-top: 50px;
+  min-height: 80vh;
+  padding-bottom: 100px;
 }
 
 .thankyou .thankyou_image {
