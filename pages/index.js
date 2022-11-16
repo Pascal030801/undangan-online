@@ -370,7 +370,7 @@ function Home() {
                 <Fade>
                   <div className={`${styles.quote_alkitab_container}`}>
                     <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
-                    <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat`}</p>
                     <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
                     <p className={`${styles.quote_alkitab}`}>{`menyempurnakan."`}</p>
                     <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>

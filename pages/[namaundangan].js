@@ -365,7 +365,7 @@ function UndanganWithNama(props) {
                 <Fade>
                   <div className={`${styles.quote_alkitab_container}`}>
                     <p className={`${styles.quote_alkitab}`}>{`"Dan di atas semuanya itu:`}</p>
-                    <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat"`}</p>
+                    <p className={`${styles.quote_alkitab}`}>{`Kenakanlah kasih sebagai pengikat`}</p>
                     <p className={`${styles.quote_alkitab}`}>{`Yang mempersatukan dan `}</p>
                     <p className={`${styles.quote_alkitab}`}>{`menyempurnakan."`}</p>
                     <p className={`${styles.quote_alkitab}`} style={{marginTop: '1em'}}>Kolose 3:14</p>
@@ -870,8 +870,8 @@ export async function getStaticPaths() {
             {params: {namaundangan: 'Agung+Triatmojo+dan+Partner'}},
             {params: {namaundangan: 'Cristin+Virgyantari+dan+Partner'}},
             {params: {namaundangan: 'Apridawati+Elistyandari+dan+Partner'}},
-            {params: {namaundangan: 'SMP+N+3+Sleman+dan+Partner'}},
-            {params: {namaundangan: 'BPW+JMKI+Jogja+dan+Partner'}},
+            {params: {namaundangan: 'SMPN+3+Sleman'}},
+            {params: {namaundangan: 'BPW+JMKI+Jogja'}},
   
         ],
         fallback: true,
